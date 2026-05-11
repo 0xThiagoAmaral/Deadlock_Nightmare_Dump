@@ -102,4 +102,28 @@ impl Process {
         }
         None
     }
+
+    pub fn get_section(&self, module_base: usize, section_name: &str) -> Option<(usize, usize)> {
+        let dos_header: [u8; 64] = self.read(module_base);
+        let nt_header_off = u32::from_le_bytes(dos_header[0x3C..0x40].try_into().unwrap()) as usize;
+        let num_sections: u16 = self.read(module_base + nt_header_off + 0x6);
+        let optional_header_size: u16 = self.read(module_base + nt_header_off + 0x14);
+        let section_header_start = module_base + nt_header_off + 0x18 + optional_header_size as usize;
+        
+        for i in 0..num_sections as usize {
+            let header_addr = section_header_start + (i * 40);
+            let mut name_bytes = [0u8; 8];
+            unsafe {
+                let _ = ReadProcessMemory(self.handle, header_addr as _, name_bytes.as_mut_ptr() as _, 8, None);
+            }
+            let name = String::from_utf8_lossy(&name_bytes).trim_matches('\0').to_string();
+            
+            if name.contains(section_name) {
+                let virtual_size: u32 = self.read(header_addr + 8);
+                let virtual_addr: u32 = self.read(header_addr + 12);
+                return Some((module_base + virtual_addr as usize, virtual_size as usize));
+            }
+        }
+        None
+    }
 }

@@ -14772,15 +14772,15 @@ namespace deadlock_dumper {
     namespace CGameRulesProxy {
     }
     namespace CGameSceneNode {
+      constexpr std::ptrdiff_t m_bDirtyBoneMergeInfo = 0x0;
+      constexpr std::ptrdiff_t m_bBoneMergeFlex = 0x0;
+      constexpr std::ptrdiff_t m_nLatchAbsOrigin = 0x0;
+      constexpr std::ptrdiff_t m_bNetworkedPositionChanged = 0x0;
       constexpr std::ptrdiff_t m_bNetworkedAnglesChanged = 0x0;
       constexpr std::ptrdiff_t m_bDirtyBoneMergeBoneToRoot = 0x0;
-      constexpr std::ptrdiff_t m_bWillBeCallingPostDataUpdate = 0x0;
-      constexpr std::ptrdiff_t m_bBoneMergeFlex = 0x0;
       constexpr std::ptrdiff_t m_bNetworkedScaleChanged = 0x0;
-      constexpr std::ptrdiff_t m_bDirtyBoneMergeInfo = 0x0;
+      constexpr std::ptrdiff_t m_bWillBeCallingPostDataUpdate = 0x0;
       constexpr std::ptrdiff_t m_bDirtyHierarchy = 0x0;
-      constexpr std::ptrdiff_t m_bNetworkedPositionChanged = 0x0;
-      constexpr std::ptrdiff_t m_nLatchAbsOrigin = 0x0;
       constexpr std::ptrdiff_t m_nodeToWorld = 0x10;
       constexpr std::ptrdiff_t m_pOwner = 0x30;
       constexpr std::ptrdiff_t m_pParent = 0x38;

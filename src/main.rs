@@ -45,9 +45,17 @@ fn main() {
         }
     }
 
-    // 4. VTable Dumper (Comportamento)
+    // 4. Mapeando VTables e Funcoes Virtuais
     println!("[*] Mapeando VTables e Funcoes Virtuais...");
-    let vtables = sdk::vtable::dump_vtables(&proc, client_base, client_size);
+    let vtables_raw = sdk::vtable::dump_vtables(&proc, client_base, client_size);
+    let mut vtables = HashMap::new();
+    
+    for (class_name, methods) in vtables_raw {
+        if class_name.contains("BaseEntity") || class_name.contains("PlayerPawn") || 
+           class_name.contains("Controller") || class_name.contains("C_") {
+            vtables.insert(class_name, methods);
+        }
+    }
 
     // 5. Protobuf Dumper (Nivel God)
     println!("[*] Extraindo Mensagens de Rede (Protobufs)...");

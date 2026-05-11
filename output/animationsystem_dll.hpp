@@ -1275,23 +1275,23 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_flGroundBoxWidth = 0x30;
     }
     namespace CNewParticleEffect {
-      constexpr std::ptrdiff_t m_bShouldSimulateDuringGamePaused = 0x0;
-      constexpr std::ptrdiff_t m_bSuppressScreenSpaceEffect = 0x0;
-      constexpr std::ptrdiff_t m_bNeedsBBoxUpdate = 0x0;
-      constexpr std::ptrdiff_t m_bShouldCheckFoW = 0x0;
-      constexpr std::ptrdiff_t m_bCanFreeze = 0x0;
-      constexpr std::ptrdiff_t m_bDontRemove = 0x0;
       constexpr std::ptrdiff_t m_bIsAsyncCreate = 0x0;
-      constexpr std::ptrdiff_t m_bSimulate = 0x0;
-      constexpr std::ptrdiff_t m_bShouldSave = 0x0;
-      constexpr std::ptrdiff_t m_bShouldPerformCullCheck = 0x0;
+      constexpr std::ptrdiff_t m_bDontRemove = 0x0;
       constexpr std::ptrdiff_t m_bFreezeTargetState = 0x0;
-      constexpr std::ptrdiff_t m_bFreezeTransitionActive = 0x0;
-      constexpr std::ptrdiff_t m_bForceNoDraw = 0x0;
       constexpr std::ptrdiff_t m_bRemove = 0x0;
       constexpr std::ptrdiff_t m_bAllocated = 0x0;
-      constexpr std::ptrdiff_t m_bAutoUpdateBBox = 0x0;
+      constexpr std::ptrdiff_t m_bNeedsBBoxUpdate = 0x0;
       constexpr std::ptrdiff_t m_bIsFirstFrame = 0x0;
+      constexpr std::ptrdiff_t m_bSuppressScreenSpaceEffect = 0x0;
+      constexpr std::ptrdiff_t m_bShouldSimulateDuringGamePaused = 0x0;
+      constexpr std::ptrdiff_t m_bAutoUpdateBBox = 0x0;
+      constexpr std::ptrdiff_t m_bCanFreeze = 0x0;
+      constexpr std::ptrdiff_t m_bFreezeTransitionActive = 0x0;
+      constexpr std::ptrdiff_t m_bForceNoDraw = 0x0;
+      constexpr std::ptrdiff_t m_bShouldCheckFoW = 0x0;
+      constexpr std::ptrdiff_t m_bShouldPerformCullCheck = 0x0;
+      constexpr std::ptrdiff_t m_bSimulate = 0x0;
+      constexpr std::ptrdiff_t m_bShouldSave = 0x0;
       constexpr std::ptrdiff_t m_pNext = 0x10;
       constexpr std::ptrdiff_t m_pPrev = 0x18;
       constexpr std::ptrdiff_t m_pParticles = 0x20;
@@ -2962,23 +2962,23 @@ namespace deadlock_dumper {
     }
     namespace CStateNodeStateData {
       constexpr std::ptrdiff_t m_pChild = 0x0;
-      constexpr std::ptrdiff_t m_bExclusiveRootMotion = 0x0;
       constexpr std::ptrdiff_t m_bExclusiveRootMotionFirstFrame = 0x0;
+      constexpr std::ptrdiff_t m_bExclusiveRootMotion = 0x0;
     }
     namespace CStateNodeTransitionData {
+      constexpr std::ptrdiff_t m_curve = 0x0;
       constexpr std::ptrdiff_t m_bReset = 0x0;
       constexpr std::ptrdiff_t m_resetCycleOption = 0x0;
-      constexpr std::ptrdiff_t m_curve = 0x0;
       constexpr std::ptrdiff_t m_blendDuration = 0x8;
       constexpr std::ptrdiff_t m_resetCycleValue = 0x10;
     }
     namespace CStateUpdateData {
-      constexpr std::ptrdiff_t m_bPreEvaluatePassthroughTransitionPath = 0x0;
       constexpr std::ptrdiff_t m_name = 0x0;
       constexpr std::ptrdiff_t m_bIsStartState = 0x0;
-      constexpr std::ptrdiff_t m_bIsPassthrough = 0x0;
-      constexpr std::ptrdiff_t m_bIsEndState = 0x0;
       constexpr std::ptrdiff_t m_bIsPassthroughRootMotion = 0x0;
+      constexpr std::ptrdiff_t m_bIsEndState = 0x0;
+      constexpr std::ptrdiff_t m_bPreEvaluatePassthroughTransitionPath = 0x0;
+      constexpr std::ptrdiff_t m_bIsPassthrough = 0x0;
       constexpr std::ptrdiff_t m_hScript = 0x8;
       constexpr std::ptrdiff_t m_transitionIndices = 0x10;
       constexpr std::ptrdiff_t m_actions = 0x28;
@@ -3060,9 +3060,9 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_bSetEnabled = 0x1c;
     }
     namespace CTransitionUpdateData {
-      constexpr std::ptrdiff_t m_bDisabled = 0x0;
       constexpr std::ptrdiff_t m_nHandshakeMaskToDisableFirst = 0x0;
       constexpr std::ptrdiff_t m_srcStateIndex = 0x0;
+      constexpr std::ptrdiff_t m_bDisabled = 0x0;
       constexpr std::ptrdiff_t m_destStateIndex = 0x1;
     }
     namespace CTurnHelperUpdateNode {
