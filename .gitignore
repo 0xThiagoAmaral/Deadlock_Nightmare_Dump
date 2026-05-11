@@ -1,0 +1,31 @@
+# Compilados e Binários (OpSec Crítico)
+*.dll
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+build/
+output/
+bin/
+x64/
+Debug/
+Release/
+target/
+
+# Dumps de Memória e Logs (Para não vazar sua máquina)
+*.dmp
+*.mdmp
+logs/
+crashes/
+
+# Configurações Locais e Chaves
+config.ini
+*.env
+keys.txt
+
+# Arquivos da IDE
+.vscode/
+*.user
+.vs/
