@@ -12,9 +12,21 @@ pub fn dump_interfaces(proc: &Process, target_dlls: &[&str]) -> HashMap<String, 
                 let _ = ReadProcessMemory(proc.handle, base as _, data.as_ptr() as _, size, None);
             }
             
-            if let Some(idx) = data.windows(8).position(|w| w[0..3] == [0x48, 0x8B, 0x05] && w[7] == 0xC3) {
-                let rel_off = i32::from_le_bytes(data[idx+3..idx+7].try_into().unwrap());
-                let list_head_ptr = base + idx + 7 + rel_off as usize;
+            let patterns = [
+                ([0x48, 0x8B, 0x05].as_slice(), "xxx????", 7, 3), // mov rax, [rip+offset]
+                ([0x48, 0x8B, 0x0D].as_slice(), "xxx????", 7, 3), // mov rcx, [rip+offset]
+            ];
+
+            let mut list_head_ptr = 0;
+            for (p, mask, size, off) in patterns {
+                if let Some(idx) = find_pattern(&data, p, mask) {
+                    let rel_off = i32::from_le_bytes(data[idx+off..idx+off+4].try_into().unwrap());
+                    list_head_ptr = base + idx + size + rel_off as usize;
+                    break;
+                }
+            }
+            
+            if list_head_ptr != 0 {
                 let mut current_reg: usize = proc.read(list_head_ptr);
                 
                 let mut module_inters = HashMap::new();
@@ -34,4 +46,19 @@ pub fn dump_interfaces(proc: &Process, target_dlls: &[&str]) -> HashMap<String, 
         }
     }
     interfaces
+}
+
+fn find_pattern(data: &[u8], pattern: &[u8], mask: &str) -> Option<usize> {
+    let mask_bytes = mask.as_bytes();
+    for i in 0..data.len() - pattern.len() {
+        let mut found = true;
+        for j in 0..pattern.len() {
+            if mask_bytes[j] == b'x' && data[i + j] != pattern[j] {
+                found = false;
+                break;
+            }
+        }
+        if found { return Some(i); }
+    }
+    None
 }

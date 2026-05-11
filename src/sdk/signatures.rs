@@ -39,6 +39,46 @@ pub fn scan_signatures(proc: &Process, client_base: usize, client_size: usize) -
             rip_offset: 3,
             rip_size: 7,
         },
+        Signature {
+            name: "GlobalVars".to_string(),
+            pattern: vec![0x44, 0x8B, 0x81, 0x24, 0x0B, 0x00, 0x00, 0x45, 0x85, 0xC0, 0x78, 0x00, 0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x44, 0x3B, 0x40, 0x44],
+            mask: "xxxxxxxxxxx?xxx????xxxx".to_string(),
+            offset: 0,
+            rip_offset: 15,
+            rip_size: 19,
+        },
+        Signature {
+            name: "ViewRender".to_string(),
+            pattern: vec![0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x01, 0x48, 0xFF, 0x60, 0x38],
+            mask: "xxx????xxxxxxx".to_string(),
+            offset: 0,
+            rip_offset: 3,
+            rip_size: 7,
+        },
+        Signature {
+            name: "GameEntitySystem".to_string(),
+            pattern: vec![0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0x85, 0xC9, 0x74, 0x0F],
+            mask: "xxx????xxxx?".to_string(),
+            offset: 0,
+            rip_offset: 3,
+            rip_size: 7,
+        },
+        Signature {
+            name: "ForceAttack".to_string(),
+            pattern: vec![0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8D, 0x15, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x44, 0x24],
+            mask: "xxx????xxx????xxxx".to_string(),
+            offset: 0,
+            rip_offset: 3,
+            rip_size: 7,
+        },
+        Signature {
+            name: "ForceJump".to_string(),
+            pattern: vec![0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8D, 0x15, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x44, 0x24],
+            mask: "xxx????xxx????xxxx".to_string(),
+            offset: 28, // Offset dependente do binario, mas vamos usar um pattern mais especifico se possivel
+            rip_offset: 3,
+            rip_size: 7,
+        },
     ];
 
     let data = vec![0u8; client_size];

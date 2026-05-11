@@ -11,14 +11,14 @@ Este repositório contém o dump automatizado do framework **Nightmare Oracle**.
 | Arquivo | Descrição |
 | :--- | :--- |
 | `client_dll.hpp` | Classes e NetVars do cliente (C_BaseEntity, etc). |
-| `server_dll.hpp` | Definições de lado servidor. |
-| `all_modules.json` | Dump completo em formato JSON para parsing. |
-| `deadlock_classes.reclass` | Projeto ReClass.NET pronto para inspeção de memória. |
-| `hierarchy.html` | Visualização da hierarquia de classes do Source 2. |
+| `signatures.hpp` | Offsets resolvidos (dwEntityList, dwGlobalVars, etc). |
+| `all_modules.json` | Dump completo com interfaces e assinaturas. |
 
-## 🛠️ Protocolo de Versão
-- **Binários:** Ignorados pelo `.gitignore` conforme Rule 6 (OpSec).
-- **Artifacts:** Pushed para o repositório por solicitação explícita do usuário.
+## 🛠️ Novas Implementações
+- **Resolved Offsets:** Agora o exportador gera valores hexadecimais reais (`constexpr std::ptrdiff_t`) em vez de patterns.
+- **Assinaturas Vitais:** Adicionado `GlobalVars`, `ViewRender` e `GameEntitySystem`.
+- **Interface Discovery:** Refatorado para encontrar interfaces em todos os módulos (client, engine, schemasystem).
+- **Input System:** Adicionado mapeamento de botões (`ForceAttack`, `ForceJump`).
 
 ---
-*Documentação gerada automaticamente conforme o Protocolo Legista.*
+*Documentação atualizada conforme o Protocolo Legista.*

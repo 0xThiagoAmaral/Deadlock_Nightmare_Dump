@@ -73,7 +73,7 @@ fn main() {
     exporters::cpp::export_cpp(&schema_data);
     exporters::reclass::export_reclass(&schema_data);
     exporters::hierarchy::export_hierarchy(&schema_data);
-    exporters::signatures::export_signatures(&auto_sigs);
+    exporters::signatures::export_signatures(&signatures, &auto_sigs);
     
     println!("\n[+] SUCESSO! O Oraculo terminou o dump.");
     println!("[+] Localizado em: deadlock_dumper_rust/output/");

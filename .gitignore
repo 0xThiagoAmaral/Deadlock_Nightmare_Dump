@@ -7,7 +7,7 @@
 *.lib
 *.exp
 build/
-output/
+out/
 bin/
 x64/
 Debug/
