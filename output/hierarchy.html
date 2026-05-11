@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deadlock Oracle - Global Hierarchy</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { background: #0b0e14; color: #4db6ac; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .container { padding: 40px; }
+        h1 { border-bottom: 2px solid #4db6ac; padding-bottom: 10px; }
+        .mermaid { background: #151921; border: 1px solid #333; padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕵️ Deadlock Engine - Inheritance Oracle</h1>
+        <p>Visualização de herança de classes extraída via Schema System.</p>
+        <div class="mermaid">
+            classDiagram
+            class C_AI_BaseNPC {
+                +m_bImportantRagdoll : 0xeed
+                +m_bFadeCorpse : 0xeec
+                +m_NPCState : 0xee8
+            }
+            class C_AI_CitadelNPC {
+                +m_vEyeBeamTarget : 0xf30
+                +m_bBeamActive : 0xf2c
+                +m_bMinion : 0x19d8
+            }
+            class C_AI_Motor {
+                +m_nCurrentStance : 0x50
+            }
+            class C_AirheartStickyBombInWorld {
+            }
+            class C_AssignedLaneParticle {
+                +m_iLane : 0x9c0
+            }
+            class C_BarnLight {
+                +m_vPrecomputedOBBAngles4 : 0xc08
+                +m_LightStyleEvents : 0xa00
+                +m_flSoftY : 0xaa0
+            }
+            class C_BaseButton {
+                +m_glowEntity : 0x9a0
+                +m_szDisplayText : 0x9a8
+                +m_usable : 0x9a4
+            }
+            class C_BaseClientUIEntity {
+                +m_bEnabled : 0x9a8
+                +m_DialogXMLName : 0x9b0
+                +m_PanelClassName : 0x9b8
+            }
+            class C_BaseCombatCharacter {
+                +m_nWaterWakeMode : 0xe74
+                +m_flWaterNextTraceTime : 0xe7c
+                +m_hMyWearables : 0xe58
+            }
+            class C_BaseDoor {
+                +m_bIsUsable : 0x9a0
+            }
+            class C_BaseEntity {
+                +m_iHealth : 0x354
+                +m_hOwnerEntity : 0x51c
+                +m_pRenderComponent : 0x338
+            }
+            class C_BaseEntityAPI {
+            }
+            class C_BaseFlex {
+                +m_iEyeAttachment : 0xd89
+                +m_nEyeOcclusionRendererBone : 0xda8
+                +m_nLastFlexUpdateFrameCount : 0xd78
+            }
+            class C_BaseFlex__Emphasized_Phoneme {
+                +m_flAmount : 0x18
+                +m_bBasechecked : 0x1d
+                +m_bRequired : 0x1c
+            }
+            class C_BaseModelEntity {
+                +m_flFadeScale : 0x84c
+                +m_nRenderFX : 0x669
+                +m_nDestructiblePartInitialStateDestructed4_PartIndex : 0x63c
+            }
+            class C_BasePlayerPawn {
+                +m_flDeathTime : 0x1048
+                +m_pAutoaimServices : 0xef0
+                +v_angle : 0xf98
+            }
+            class C_BasePlayerWeapon {
+                +m_nNextPrimaryAttackTick : 0xca0
+                +m_iClip2 : 0xcb4
+                +m_iClip1 : 0xcb0
+            }
+            class C_BasePropDoor {
+                +m_closedPosition : 0xef8
+                +m_eDoorState : 0xef0
+                +m_bLocked : 0xef5
+            }
+            class C_BaseToggle {
+            }
+            class C_BaseTrigger {
+                +m_bDisabled : 0xa6c
+                +m_OnEndTouchAll : 0x9e8
+                +m_OnTouchingEachEntity : 0xa18
+            }
+            class C_Beam {
+                +m_hBaseMaterial : 0x9d8
+                +m_nAttachIndex : 0xa18
+                +m_flFrameRate : 0x9a0
+            }
+            class C_Breakable {
+            }
+            class C_BreakableProp {
+                +m_hBreaker : 0xd94
+                +m_flDefaultFadeScale : 0xe00
+                +m_explodeRadius : 0xdc0
+            }
+            class C_CProjectile_Rutger_Rocket {
+            }
+            class C_CitadelBaseAbility {
+                +m_bPredErrorCheckIsSelected : 0x7c0
+                +m_flChargeRechargeEnd : 0x788
+                +m_bShouldBeExecuted : 0x742
+            }
+            class C_CitadelBoomerangProjectile {
+                +m_bReturning : 0xad0
+            }
+            class C_CitadelClimbRopeTrigger {
+                +m_bAlignCameraOnAutoDismount : 0xa70
+            }
+            class C_CitadelConfigurableTrackedProjectile {
+            }
+            class C_CitadelDruidInvisBush {
+                +m_flStartGrowTime : 0xcc0
+                +m_vStartPos : 0xca8
+                +m_flEndGrowTime : 0xcc4
+            }
+            class C_CitadelGameRules {
+                +m_eGameMode : 0xa8
+                +m_nGameOverEvent : 0x9ee4
+                +m_nLastPreGameCount : 0x9ebc
+            }
+            class C_CitadelGameRulesProxy {
+                +m_pGameRules : 0x5f0
+            }
+            class C_CitadelIdolReturnTrigger {
+            }
+            class C_CitadelItemPickup {
+                +m_eLootType : 0xcc0
+                +m_hTargetPlayer : 0xcd4
+                +m_flFallRate : 0xcd8
+            }
+            class C_CitadelMinimapBoundary {
+            }
+            class C_CitadelObserverPawn {
+            }
+            C_BasePlayerPawn <|-- C_CitadelPlayerBotNPCBrain
+            class C_CitadelPlayerBotNPCBrain {
+            }
+            C_BasePlayerPawn <|-- C_CitadelPlayerPawn
+            class C_CitadelPlayerPawn {
+                +m_bAudioHasSkyExposure : 0x1985
+                +m_bInItemShopZone : 0x1311
+                +m_bQuickbuyAutoPurchase : 0x137c
+            }
+            class C_CitadelProjectile {
+                +m_vecSpawnPosition : 0xa38
+                +m_bHandlingPortalResult : 0x9f1
+                +m_abilityID : 0xa28
+            }
+            class C_CitadelProjectile_ImmobilizeTrap {
+                +m_bShouldDraw : 0xad0
+            }
+            class C_CitadelShopTunnelTrigger {
+            }
+            class C_CitadelSpawnBlocker {
+            }
+            class C_CitadelTeam {
+                +m_nStreetBrawlScore : 0x730
+                +m_nFlexSlotsUnlocked : 0x6c0
+                +m_vecBaseLocationY : 0x6b0
+            }
+            class C_CitadelTeleportTrigger {
+                +m_vExitOrigin : 0xa70
+            }
+            class C_CitadelTrackedProjectile {
+            }
+            class C_CitadelTriggerHideout {
+            }
+            class C_CitadelViscousBall {
+                +m_bNeedsPhysicsUpdate : 0x9b0
+                +m_hAbility : 0x9a8
+                +m_flBallRadius : 0x9ac
+            }
+            class C_CitadelZiplinePath {
+                +m_iLaneNumber : 0x700
+                +m_bUseBaseLaneColor : 0x704
+            }
+            class C_Citadel_BaseProp_MidStairs {
+                +m_eLocation : 0x5f0
+            }
+            class C_Citadel_Bounce_Pad {
+                +m_bDeactivated : 0xcb4
+                +m_flUpFactor : 0xca8
+                +m_flBarrelUpFactor : 0xcbc
+            }
+            class C_Citadel_BreakableDroppedGoldPickup {
+            }
+            class C_Citadel_BreakableDroppedNecroPickup {
+            }
+            class C_Citadel_BreakableProp {
+                +m_nHitIndex : 0xca0
+            }
+            class C_Citadel_BreakablePropPickup {
+                +m_vVacuumPos : 0xddc
+                +m_hVacuumTarget : 0xcd8
+                +m_nNameOffset : 0xcb0
+            }
+            class C_Citadel_BreakableProp_GraphController {
+                +m_flDamageReceived : 0xb8
+                +m_bHitTrigger : 0x108
+                +m_bSetInit : 0x90
+            }
+            class C_Citadel_BreakblePropGoldPickup {
+                +m_iGoldReward : 0xdf0
+            }
+            class C_Citadel_BreakblePropHealthPickup {
+            }
+            class C_Citadel_BreakblePropModifierPickup {
+            }
+            class C_Citadel_CatAnimating {
+            }
+            class C_Citadel_DeployablePreview {
+            }
+            class C_Citadel_DeployablePreview_GraphController {
+                +m_bDeploying : 0x90
+            }
+            class C_Citadel_Destroyable_Building {
+                +m_bDestroyed : 0xef8
+                +m_bActive : 0xef9
+                +m_CCitadelAbilityComponent : 0xca8
+            }
+            class C_Citadel_DruidHealingFruit {
+            }
+            class C_Citadel_DruidHealingTree {
+                +m_flGrowDuration : 0xce8
+                +m_vEndPos : 0xcdc
+                +m_strFruitModelName : 0xcc8
+            }
+            class C_Citadel_DruidPlantShield {
+                +m_vEndPos : 0xcb8
+                +m_vStartPos : 0xcac
+                +m_bSolid : 0xca8
+            }
+            class C_Citadel_DynamicProp {
+                +m_strDefaultSkin : 0xef8
+                +m_nPlayerTeamEvent : 0xef0
+                +m_bIsWorld : 0xf10
+            }
+            class C_Citadel_FissureWall {
+                +m_flEndEmitTime : 0xcbc
+                +m_bSolid : 0xcc0
+                +m_nTouchCount : 0xcc4
+            }
+            class C_Citadel_GraveStone_Blocker {
+                +m_iGravestoneState : 0xcac
+                +m_flLifetime : 0xcb0
+                +m_hAbility : 0xca8
+            }
+            class C_Citadel_Hideout_Ball {
+            }
+            class C_Citadel_Hideout_Clock {
+            }
+            class C_Citadel_Ice_Dome_Blocker {
+                +m_flTurnSolidTime : 0xca0
+            }
+            class C_Citadel_Ice_Path_Shard_Physics {
+                +m_qForward : 0x9d8
+                +m_ShardDesc : 0x9a0
+                +m_flEndTime : 0x9e8
+            }
+            class C_Citadel_Magic_Beam_Blocker {
+                +m_flTurnSolidTime : 0xca0
+            }
+            class C_Citadel_Nano_Predatory_Statue {
+                +m_hAbility : 0xcc0
+                +m_flLifetime : 0xcc4
+            }
+            class C_Citadel_PestilenceDroneDispenser {
+            }
+            class C_Citadel_PickupItemSpawner {
+                +m_tNextDropTime : 0xca8
+                +m_bPowerupActive : 0xcac
+            }
+            class C_Citadel_Projectile_Archer_ChargedShot {
+            }
+            class C_Citadel_Projectile_Bebop_Hook {
+                +m_iChainEffect : 0xad0
+            }
+            class C_Citadel_Projectile_BloodBomb {
+            }
+            class C_Citadel_Projectile_DustStorm {
+            }
+            class C_Citadel_Projectile_Guided_Arrow {
+            }
+            class C_Citadel_Projectile_SettingSun {
+            }
+            class C_Citadel_Projectile_Viscous_GooGrenade {
+                +m_vecLastHitTargets : 0xad8
+                +m_vecProjectileHitTargets : 0xaf0
+                +m_tNextDetonateTime : 0xad4
+            }
+            class C_Citadel_Projectile_Wrecker_Teleport {
+            }
+            class C_Citadel_Projectile_WreckingBall {
+            }
+            class C_Citadel_PunchablePowerup {
+            }
+            class C_Citadel_RestorativeGooCube {
+            }
+            class C_Citadel_Shield {
+                +m_flShieldOffset : 0x9ac
+                +m_bFixedPosition : 0x9a9
+                +m_bAllowRotatingUp : 0x9a8
+            }
+            class C_Citadel_SmokeGrenade_Blocker {
+                +m_flTurnSolidTime : 0xca0
+            }
+            class C_Citadel_SpiderAnimating {
+            }
+            class C_ClientRagdoll {
+                +m_iEyeAttachment : 0xcbd
+                +m_flScaleEnd : 0xcc0
+                +m_flScaleTimeStart : 0xce8
+            }
+            class C_ColorCorrection {
+                +m_flMaxWeight : 0x60c
+                +m_flCurWeight : 0x610
+                +m_bEnabled : 0x814
+            }
+            class C_ColorCorrectionVolume {
+                +m_LastEnterWeight : 0xa70
+                +m_Weight : 0xa8c
+                +m_FadeDuration : 0xa88
+            }
+            class C_CommandContext {
+                +needsprocessing : 0x0
+                +command_number : 0xb0
+            }
+            class C_ConditionalCollidable {
+            }
+            class C_DynamicLight {
+                +m_SpotRadius : 0x9b4
+                +m_Flags : 0x9a0
+                +m_Exponent : 0x9a8
+            }
+            class C_DynamicProp {
+                +m_glowColor : 0xeb0
+                +m_OnAnimReachedEnd : 0xe78
+                +m_vecCachedRenderMaxs : 0xec8
+            }
+            class C_DynamicPropAlias_cable_dynamic {
+            }
+            class C_DynamicPropAlias_dynamic_prop {
+            }
+            class C_DynamicPropAlias_prop_dynamic_override {
+            }
+            class C_EconEntity {
+                +m_hViewmodelAttachment : 0xfe8
+                +m_bClientside : 0xfc0
+                +m_vecAttachedParticles : 0xfd0
+            }
+            class C_EconEntity__AttachedModelData_t {
+                +m_iModelDisplayFlags : 0x0
+            }
+            class C_EconEntity__AttachedParticleInfo_t {
+                +m_bShouldDestroyImmediately : 0x8
+                +m_customType : 0x4
+                +m_nAttachedParticleIndex : 0x0
+            }
+            class C_EconItemAttribute {
+                +m_flValue : 0x34
+                +m_iAttributeDefinitionIndex : 0x30
+            }
+            class C_EconItemView {
+                +m_iItemDefinitionIndex : 0x8
+                +m_bHasAttachedParticles : 0x35
+                +m_iInventoryPosition : 0x24
+            }
+            class C_EconWearable {
+            }
+            class C_EntityDissolve {
+                +m_bLinkedToServerEnt : 0x9dd
+                +m_flStartTime : 0x9a8
+                +m_flFadeOutLength : 0x9c0
+            }
+            class C_EntityFlame {
+                +m_hEntAttached : 0x5f0
+                +m_hOldAttached : 0x618
+                +m_bCheapEffect : 0x61c
+            }
+            class C_EnvCombinedLightProbeVolume {
+                +m_Entity_nLightProbeSizeX : 0x1704
+                +m_Entity_nEnvCubeMapArrayIndex : 0x16e8
+                +m_Entity_hCubemapTexture : 0x1670
+            }
+            class C_EnvCubemap {
+                +m_Entity_bEnabled : 0x6d0
+                +m_Entity_vBoxProjectMaxs : 0x68c
+                +m_Entity_vBoxProjectMins : 0x680
+            }
+            class C_EnvCubemapBox {
+            }
+            class C_EnvCubemapFog {
+                +m_flFogHeightEnd : 0x604
+                +m_flFogMaxOpacity : 0x618
+                +m_iszSkyEntity : 0x628
+            }
+            class C_EnvDecal {
+                +m_bProjectOnWorld : 0x9b8
+                +m_bProjectOnCharacters : 0x9b9
+                +m_flWidth : 0x9a8
+            }
+            class C_EnvDetailController {
+                +m_flFadeEndDist : 0x5f4
+                +m_flFadeStartDist : 0x5f0
+            }
+            class C_EnvLightProbeVolume {
+                +m_Entity_bMoveable : 0x1648
+                +m_Entity_hLightProbeTexture_SH2_G : 0x1608
+                +m_Entity_nPriority : 0x1650
+            }
+            class C_EnvParticleGlow {
+                +m_ColorTint : 0xf5c
+                +m_hTextureOverride : 0xf60
+                +m_flSelfIllumScale : 0xf58
+            }
+            class C_EnvSky {
+                +m_vTintColor : 0x9b1
+                +m_bStartDisabled : 0x9b0
+                +m_bEnabled : 0x9d4
+            }
+            class C_EnvVolumetricFogController {
+                +m_flStartAnisotropy : 0x64c
+                +m_fFirstVolumeSliceThickness : 0x614
+                +m_nIndirectTextureDimX : 0x618
+            }
+            class C_EnvVolumetricFogVolume {
+                +m_bIndirectUseLPVs : 0x60d
+                +m_vBoxMaxs : 0x600
+                +m_bStartDisabled : 0x60c
+            }
+            class C_EnvWind {
+                +m_EnvWindShared : 0x5f0
+            }
+            class C_EnvWindClientside {
+                +m_EnvWindShared : 0x5f0
+            }
+            class C_EnvWindController {
+                +m_bIsMaster : 0x708
+                +m_fVolumeHalfExtentZ : 0x6f8
+                +m_EnvWindShared : 0x5f0
+            }
+            class C_EnvWindShared {
+                +m_windRadius : 0x14
+                +m_iWindSeed : 0xc
+                +m_flMinGustDelay : 0x1c
+            }
+            class C_EnvWindVolume {
+                +m_fWindSpeedVariationMultiplier : 0x61c
+                +m_vBoxMaxs : 0x600
+                +m_bActive : 0x5f0
+            }
+            class C_Fish {
+                +m_actualPos : 0xcf8
+                +m_poolOrigin : 0xd10
+                +m_wiggleRate : 0xcf4
+            }
+            class C_FogController {
+                +m_bUseAngles : 0x658
+                +m_fog : 0x5f0
+                +m_iChangedVariables : 0x65c
+            }
+            class C_FuncBrush {
+            }
+            class C_FuncElectrifiedVolume {
+                +m_bState : 0x9b0
+                +m_EffectName : 0x9a8
+                +m_nAmbientEffect : 0x9a0
+            }
+            class C_FuncLadder {
+                +m_Dismounts : 0x9b0
+                +m_vecPlayerMountPositionTop : 0x9d4
+                +m_flAutoRideSpeed : 0x9ec
+            }
+            class C_FuncMonitor {
+                +m_bDraw3DSkybox : 0x9bd
+                +m_bRenderShadows : 0x9ac
+                +m_hTargetCamera : 0x9b8
+            }
+            class C_FuncMoveLinear {
+            }
+            class C_FuncMover {
+            }
+            class C_FuncRotating {
+            }
+            class C_FuncTrackTrain {
+                +m_flRadius : 0x9a4
+                +m_flLineLength : 0x9a8
+                +m_nLongAxis : 0x9a0
+            }
+            class C_GameRules {
+                +m_nPauseStartTick : 0x34
+                +m_nTotalPausedTicks : 0x30
+                +__m_pChainEntity : 0x8
+            }
+            class C_GameRulesProxy {
+            }
+            class C_GlobalLight {
+                +m_WindClothForceHandle : 0xab0
+            }
+            class C_GradientFog {
+                +m_hGradientFogTexture : 0x5f0
+                +m_flFadeTime : 0x624
+                +m_bStartDisabled : 0x628
+            }
+            class C_HandleTest {
+                +m_Handle : 0x5f0
+                +m_bSendHandle : 0x5f4
+            }
+            class C_HeroPreview {
+                +m_CCitadelHeroComponent : 0x5f0
+            }
+            class C_InWorldKeyBindPanel {
+                +m_hPlayer : 0xbf0
+            }
+            class C_InfoLadderDismount {
+            }
+            class C_InfoPortalLink {
+            }
+            class C_InfoVisibilityBox {
+                +m_nMode : 0x5f4
+                +m_vBoxSize : 0x5f8
+                +m_bEnabled : 0x604
+            }
+            class C_ItemAmmo {
+            }
+            class C_ItemCrate {
+                +m_eLootType : 0xe20
+            }
+            class C_ItemFlare {
+            }
+            class C_ItemParachute {
+            }
+            C_BaseEntity <|-- C_ItemWeaponParts
+            class C_ItemWeaponParts {
+                +m_hTouchedPlayeres : 0xcc0
+            }
+            class C_LightCapsuleEntity {
+            }
+            class C_LightDirectionalEntity {
+            }
+            class C_LightEntity {
+                +m_CLightComponent : 0x9a0
+            }
+            class C_LightEnvironmentEntity {
+            }
+            class C_LightOrthoEntity {
+            }
+            class C_LightSpotEntity {
+            }
+            class C_LocalTempEntity {
+                +m_iLastCollisionFrame : 0xd14
+                +fadeSpeed : 0xcb4
+                +m_vecTempEntVelocity : 0xd24
+            }
+            class C_MiniMapMarker {
+                +m_eType : 0x5f0
+            }
+            class C_ModelPointEntity {
+            }
+            class C_MultiplayRules {
+            }
+            class C_NPC_BarrackBoss {
+                +m_iLane : 0x1bf4
+                +m_flFadeOutStart : 0x1bf8
+                +m_flFadeOutEnd : 0x1bfc
+            }
+            class C_NPC_BaseDefenseSentry {
+                +m_vecUnitStatusOffset : 0xcb0
+            }
+            class C_NPC_Boss_Tier2 {
+                +m_hTargetedEnemy : 0x1bf4
+                +m_vecElectricBeamLookTarget : 0x1bf8
+                +m_nElectricBeamCasts : 0x1c88
+            }
+            class C_NPC_Boss_Tier2_Sidelanes {
+            }
+            class C_NPC_Boss_Tier3 {
+                +m_iLane : 0x1bc8
+                +m_ePhase : 0x1bdc
+                +m_eAliveState : 0x1bd8
+            }
+            class C_NPC_CarpetBombDrone {
+            }
+            class C_NPC_Escort {
+            }
+            class C_NPC_FieldSentry {
+                +m_flAimPitch : 0xcb8
+                +m_flAttackRange : 0xcb4
+            }
+            class C_NPC_FlyingDrone {
+            }
+            class C_NPC_HornetDrone {
+            }
+            class C_NPC_MidBoss {
+            }
+            class C_NPC_MortarSentry {
+            }
+            class C_NPC_NanoRollermine {
+                +m_flForwardSpeed : 0x1bf0
+                +m_hOwnerPawn : 0x1bf4
+            }
+            class C_NPC_Neutral_Bug {
+            }
+            class C_NPC_Neutral_Flying_Pigeon {
+            }
+            class C_NPC_Neutral_Flying_Weakpoint {
+            }
+            class C_NPC_Neutral_Hideout_Cat {
+            }
+            class C_NPC_Neutral_Hideout_Rabbit {
+            }
+            class C_NPC_Neutral_SinnersSacrifice {
+                +m_iVaultState : 0x1c08
+            }
+            class C_NPC_Neutral_SinnersSacrifice_Hideout {
+            }
+            class C_NPC_Neutral_Weakpoint {
+            }
+            class C_NPC_PestilenceDrone {
+            }
+            class C_NPC_ShieldedSentry {
+                +m_flLifeTime : 0xea8
+                +m_bHasRecentlyAttacked : 0xea4
+                +m_flAimPitch : 0xea0
+            }
+            class C_NPC_SimpleAnimatingAI {
+                +m_hEnemy : 0xca0
+                +m_hAbilityOwner : 0xca4
+            }
+            class C_NPC_SurveillanceDrone {
+            }
+            class C_NPC_TeslaCoil {
+                +m_CCitadelAbilityComponent : 0xcb0
+            }
+            class C_NPC_Trooper {
+                +m_hTargetedEnemy : 0x1bcc
+                +m_flHealingChargeParticlePct : 0x1bd0
+                +m_iLane : 0x1bc8
+            }
+            class C_NPC_TrooperBoss {
+                +m_iLane : 0x1bf4
+                +m_flFadeOutStart : 0x1bf8
+                +m_CCitadelPlayerClipComponent : 0x1bc8
+            }
+            class C_NPC_TrooperNeutral {
+                +m_bPlayingIdle : 0x1bc8
+                +m_bShieldActive : 0x1bc9
+            }
+            class C_NPC_TrooperNeutralNodeMover {
+            }
+            class C_NetTestBaseCombatCharacter {
+            }
+            class C_OmniLight {
+                +m_bShowLight : 0xcb8
+                +m_flInnerAngle : 0xcb0
+                +m_flOuterAngle : 0xcb4
+            }
+            class C_ParticleSystem {
+                +m_bAnimateDuringGameplayPause : 0xbac
+                +m_flFreezeTransitionDuration : 0xba4
+                +m_bActive : 0xba0
+            }
+            class C_PathParticleRope {
+                +m_PathNodes_Color : 0x688
+                +m_flSlack : 0x624
+                +m_bStartActive : 0x5f8
+            }
+            class C_PathParticleRopeAlias_path_particle_rope_clientside {
+            }
+            class C_PhysBox {
+            }
+            class C_PhysMagnet {
+                +m_aAttachedObjects : 0xcb8
+                +m_aAttachedObjectsFromServer : 0xca0
+            }
+            class C_PhysPropClientside {
+                +m_fDeathTime : 0xe14
+                +m_vecDamageDirection : 0xe24
+                +m_vecDamagePosition : 0xe18
+            }
+            class C_PhysicsProp {
+                +m_bAwake : 0xe10
+            }
+            C_BasePlayerPawn <|-- C_PlayerSprayDecal
+            class C_PlayerSprayDecal {
+                +m_nVersion : 0x9f0
+                +m_vecEndPos : 0x9ac
+                +m_vecLeft : 0x9c4
+            }
+            C_BasePlayerPawn <|-- C_PlayerVisibility
+            class C_PlayerVisibility {
+                +m_bStartDisabled : 0x600
+                +m_bIsEnabled : 0x601
+                +m_flVisibilityStrength : 0x5f0
+            }
+            class C_PointCamera {
+                +m_bDofEnabled : 0x626
+                +m_flDofNearBlurry : 0x628
+                +m_flDofFarCrisp : 0x630
+            }
+            class C_PointCameraVFOV {
+                +m_flVerticalFOV : 0x650
+            }
+            class C_PointClientUIDialog {
+                +m_hActivator : 0x9d0
+                +m_bStartEnabled : 0x9d4
+            }
+            class C_PointClientUIHUD {
+                +m_flWidth : 0xb54
+                +m_unHorizontalAlign : 0xb6c
+                +m_vecCSSClasses : 0xb80
+            }
+            class C_PointClientUIWorldPanel {
+                +m_unVerticalAlign : 0xbb8
+                +m_bNoDepth : 0xbe1
+                +m_bCheckCSSClasses : 0x9da
+            }
+            class C_PointClientUIWorldTextPanel {
+                +m_messageText : 0xbf0
+            }
+            class C_PointCommentaryNode {
+                +m_bRestartAfterRestore : 0xcfc
+                +m_flStartTime : 0xcc0
+                +m_iNodeNumberMax : 0xce4
+            }
+            class C_PointEntity {
+            }
+            class C_PointEntityAlias_info_target_portrait_root {
+            }
+            class C_PointValueRemapper {
+                +m_bDisabledOld : 0x5f1
+                +m_flDisengageDistance : 0x604
+                +m_flSnapValue : 0x63c
+            }
+            class C_PointWorldText {
+                +m_flBackgroundWorldToUV : 0xc64
+                +m_nTextHeightPx : 0x9c4
+                +m_flFontSize : 0xc50
+            }
+            class C_PortraitWorldCallbackHandler {
+            }
+            class C_PortraitWorldUnit {
+                +m_nThinksUntilPresent : 0x10d8
+                +m_BodyGroup : 0xee8
+                +m_bShowParticleAssetModifiers : 0xee5
+            }
+            class C_PortraitWorldUnit_GraphController {
+                +m_BaseState : 0x90
+                +m_ShopState : 0xa8
+            }
+            class C_PostProcessingVolume {
+                +m_flExposureFadeSpeedUp : 0xaa0
+                +m_flMaxLogExposure : 0xa90
+                +m_hPostSettings : 0xa80
+            }
+            class C_Precipitation {
+                +m_flDensity : 0xa70
+                +m_bParticlePrecipInitialized : 0xab9
+                +m_bHasSimulatedSinceLastSceneObjectUpdate : 0xaba
+            }
+            class C_PrecipitationBlocker {
+            }
+            class C_Projectile_Airheart_FloatingBomb {
+            }
+            class C_Projectile_Airheart_Package {
+                +m_flStunRadius : 0xcac
+                +m_pAbility : 0xca0
+                +m_flStunDuration : 0xca8
+            }
+            class C_Projectile_Doorman_Cart_Projectile {
+            }
+            class C_Projectile_GraveStone_Projectile {
+                +m_tDieTime : 0xad4
+                +m_flWidth : 0xad0
+            }
+            class C_Projectile_KnightCharge_Projectile {
+            }
+            class C_Projectile_Necro_ZombieWall_Projectile {
+            }
+            class C_Projectile_Perched_Predator {
+            }
+            class C_Projectile_PunkgoatTether {
+            }
+            class C_Projectile_Rolling_FireBall {
+            }
+            class C_Projectile_Stomp_Projectile {
+                +m_tDieTime : 0xad4
+                +m_flWidth : 0xad0
+            }
+            class C_Projectile_Synth_Barrage {
+            }
+            class C_PropDoorRotating {
+            }
+            class C_RagdollProp {
+                +m_parentPhysicsBoneIndices : 0xd00
+                +m_iEyeAttachment : 0xcf8
+                +m_worldSpaceBoneComputationOrder : 0xd18
+            }
+            class C_RagdollPropAttached {
+                +m_attachmentPointRagdollSpace : 0xd44
+                +m_vecOffset : 0xd50
+                +m_boneIndexAttached : 0xd30
+            }
+            class C_RectLight {
+                +m_bShowLight : 0xcb0
+            }
+            class C_RenderPortal {
+                +m_hLocalPortalLink : 0x9a0
+                +m_flRemoteViewForwardOffset : 0x9c0
+                +m_hRemotePortalLink : 0x9a4
+            }
+            class C_RopeKeyframe {
+                +m_Slack : 0xc72
+                +m_nLinksTouchingSomething : 0x9ac
+                +m_LinksTouchingSomething : 0x9a8
+            }
+            class C_RopeKeyframe__CPhysicsDelegate {
+                +m_pKeyframe : 0x8
+            }
+            class C_SceneEntity {
+                +m_bMultiplayer : 0x5fa
+                +m_flForceClientTime : 0x600
+                +m_bAllRequirementsComplete : 0x5fc
+            }
+            class C_SceneEntity__QueuedEvents_t {
+                +starttime : 0x0
+            }
+            class C_ShatterGlassShardPhysics {
+                +m_ShardDesc : 0xe28
+            }
+            class C_SingleplayRules {
+            }
+            class C_SkyCamera {
+                +m_skyboxSlotToken : 0x680
+                +m_bUseAngles : 0x684
+                +m_skyboxData : 0x5f0
+            }
+            class C_SoundAreaEntityBase {
+                +m_bDisabled : 0x5f0
+                +m_vPos : 0x608
+                +m_iszSoundAreaType : 0x600
+            }
+            class C_SoundAreaEntityOrientedBox {
+                +m_vMin : 0x618
+                +m_vMax : 0x624
+            }
+            class C_SoundAreaEntitySphere {
+                +m_flRadius : 0x618
+            }
+            class C_SoundEventAABBEntity {
+                +m_vMaxs : 0x6bc
+                +m_vMins : 0x6b0
+            }
+            class C_SoundEventConeEntity {
+                +m_flSweetSpotAngle : 0x6b4
+                +m_flEmitterAngle : 0x6b0
+                +m_flAttenMax : 0x6bc
+            }
+            class C_SoundEventEntity {
+                +m_bSavedIsPlaying : 0x5f4
+                +m_bToLocalPlayer : 0x5f1
+                +m_bSaveRestore : 0x5f3
+            }
+            class C_SoundEventEntityAlias_snd_event_point {
+            }
+            class C_SoundEventOBBEntity {
+                +m_vMins : 0x6b0
+                +m_vMaxs : 0x6bc
+            }
+            class C_SoundEventPathCornerEntity {
+                +m_vecCornerPairsNetworked : 0x6b0
+            }
+            class C_SoundEventSphereEntity {
+                +m_flRadius : 0x6b0
+            }
+            class C_SoundOpvarSetAABBEntity {
+            }
+            class C_SoundOpvarSetAutoRoomEntity {
+            }
+            class C_SoundOpvarSetOBBEntity {
+            }
+            class C_SoundOpvarSetOBBWindEntity {
+            }
+            class C_SoundOpvarSetPathCornerEntity {
+            }
+            class C_SoundOpvarSetPointBase {
+                +m_bFastRefresh : 0x60d
+                +m_iszOperatorName : 0x5f8
+                +m_iOpvarIndex : 0x608
+            }
+            class C_SoundOpvarSetPointEntity {
+            }
+            class C_SpotlightEnd {
+                +m_Radius : 0x9a4
+                +m_flLightScale : 0x9a0
+            }
+            class C_Sprite {
+                +m_nSpriteHeight : 0xa14
+                +m_bWorldSpaceScale : 0x9d8
+                +m_flScaleDuration : 0x9d4
+            }
+            class C_Team {
+                +m_iScore : 0x620
+                +m_aPlayers : 0x608
+                +m_aPlayerControllers : 0x5f0
+            }
+            class C_TeamRelativeParticleSystem {
+                +m_iszFriendlyEffectName : 0xf68
+                +m_iFriendlyEffectIndex : 0xf78
+                +m_iEnemyEffectIndex : 0xf80
+            }
+            class C_TeamplayRules {
+            }
+            class C_TextureBasedAnimatable {
+                +m_vAnimationBoundsMax : 0x9c4
+                +m_hPositionKeys : 0x9a8
+                +m_bLoop : 0x9a0
+            }
+            class C_TintController {
+            }
+            class C_TonemapController2 {
+                +m_flExposureAdaptationSpeedUp : 0x5f8
+                +m_flAutoExposureMin : 0x5f0
+                +m_flAutoExposureMax : 0x5f4
+            }
+            class C_TonemapController2Alias_env_tonemap_controller2 {
+            }
+            class C_TrackedProjectile_Synth_PlasmaFlux {
+                +m_bSpawnedInNoTeleportArea : 0xad0
+            }
+            class C_TriggerItemShop {
+                +m_iszSoundName : 0xa70
+            }
+            class C_TriggerLerpObject {
+            }
+            class C_TriggerMultiple {
+            }
+            class C_TriggerNeutralShield {
+            }
+            class C_TriggerPhysics {
+                +m_gravityScale : 0xa70
+                +m_vecLinearForcePointAtWorld : 0xaa0
+                +m_vecLinearForceDirection : 0xaac
+            }
+            class C_TriggerTier3Phase2Shield {
+                +m_nNumEnemyPlayers : 0xa70
+            }
+            class C_TriggerVolume {
+            }
+            class C_WaterBullet {
+            }
+            class C_World {
+            }
+            class C_fogplayerparams_t {
+                +m_flOldEnd : 0x18
+                +m_flOldFarZ : 0x24
+                +m_flOldHDRColorScale : 0x20
+            }
+
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+        });
+    </script>
+</body>
+</html>
