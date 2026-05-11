@@ -37,7 +37,8 @@ fn main() {
         for (class_name, fields) in &client_mod.classes {
             if class_name.contains("BaseEntity") || class_name.contains("PlayerPawn") {
                 for (f_name, off) in fields {
-                    if f_name.contains("Health") || f_name.contains("Team") || f_name.contains("Origin") {
+                    if f_name.contains("Health") || f_name.contains("Team") || 
+                       f_name.contains("Origin") || f_name.contains("HeroID") {
                         auto_sigs.insert(format!("{}::{}", class_name, f_name), format!("{:#x}", off));
                     }
                 }

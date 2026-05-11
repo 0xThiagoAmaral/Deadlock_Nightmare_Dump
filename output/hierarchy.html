@@ -18,14 +18,14 @@
         <div class="mermaid">
             classDiagram
             class C_AI_BaseNPC {
+                +m_pMotor : 0xef0
                 +m_NPCState : 0xee8
-                +m_bFadeCorpse : 0xeec
                 +m_bImportantRagdoll : 0xeed
             }
             class C_AI_CitadelNPC {
-                +m_vEyeBeamTarget : 0xf30
-                +m_vecWeakPoints : 0x1970
-                +m_hLookTarget : 0x19dc
+                +m_CCitadelAbilityComponent : 0x19e0
+                +m_nPlayerTeamEvent : 0x18e0
+                +m_bBeamActive : 0xf2c
             }
             class C_AI_Motor {
                 +m_nCurrentStance : 0x50
@@ -36,90 +36,90 @@
                 +m_iLane : 0x9c0
             }
             class C_BarnLight {
-                +m_flBrightness : 0x9b0
-                +m_StyleEvent : 0xa30
-                +m_vAlternateColor : 0xaf8
+                +m_flSoftX : 0xa9c
+                +m_nShadowMapSize : 0xadc
+                +m_nLightMapUniqueId : 0x9c4
             }
             class C_BaseButton {
-                +m_szDisplayText : 0x9a8
                 +m_glowEntity : 0x9a0
                 +m_usable : 0x9a4
+                +m_szDisplayText : 0x9a8
             }
             class C_BaseClientUIEntity {
-                +m_DialogXMLName : 0x9b0
                 +m_PanelClassName : 0x9b8
                 +m_PanelID : 0x9c0
+                +m_DialogXMLName : 0x9b0
             }
             class C_BaseCombatCharacter {
+                +m_nWaterWakeMode : 0xe74
                 +m_flWaterWorldZ : 0xe78
-                +m_leftFootAttachment : 0xe70
-                +m_flWaterNextTraceTime : 0xe7c
+                +m_hMyWearables : 0xe58
             }
             class C_BaseDoor {
                 +m_bIsUsable : 0x9a0
             }
             class C_BaseEntity {
-                +m_nInterpolationLatchDirtyFlags : 0x3c8
-                +m_pCollision : 0x340
-                +m_bPredictionEligible : 0x382
+                +m_fEffects : 0x528
+                +m_NetworkTransmitComponent : 0x38
+                +m_hGroundEntity : 0x52c
             }
             class C_BaseEntityAPI {
             }
             class C_BaseFlex {
-                +m_iEyeAttachment : 0xd89
+                +m_nLastFlexUpdateFrameCount : 0xd78
+                +m_flexWeight : 0xca8
                 +m_bResetFlexWeightsOnModelChange : 0xd8a
-                +m_nEyeOcclusionRendererBone : 0xda8
             }
             class C_BaseFlex__Emphasized_Phoneme {
-                +m_bValid : 0x1e
-                +m_sClassName : 0x0
                 +m_bRequired : 0x1c
+                +m_bBasechecked : 0x1d
+                +m_bValid : 0x1e
             }
             class C_BaseModelEntity {
-                +m_bUseClientOverrideTint : 0x96c
-                +m_flGlowBackfaceMult : 0x840
-                +m_bIsStaticProp : 0x662
+                +m_nDestructiblePartInitialStateDestructed3_PartIndex : 0x638
+                +m_nObjectCulling : 0x854
+                +m_iOldHealth : 0x664
             }
             class C_BasePlayerPawn {
-                +m_nLastExecutedCommandTick : 0x10a4
-                +m_flFOVSensitivityAdjust : 0x1088
-                +m_pWeaponServices : 0xee0
+                +m_pUseServices : 0xf08
+                +m_pAutoaimServices : 0xef0
+                +m_iHideHUD : 0xfb0
             }
             class C_BasePlayerWeapon {
                 +m_pReserveAmmo : 0xcb8
-                +m_flNextPrimaryAttackTickRatio : 0xca4
+                +m_nNextPrimaryAttackTick : 0xca0
                 +m_iClip1 : 0xcb0
             }
             class C_BasePropDoor {
                 +m_bLocked : 0xef5
-                +m_vWhereToSetLightingOrigin : 0xf14
-                +m_closedAngles : 0xf04
+                +m_hMaster : 0xf10
+                +m_modelChanged : 0xef4
             }
             class C_BaseToggle {
             }
             class C_BaseTrigger {
-                +m_OnEndTouchAll : 0x9e8
-                +m_OnTouching : 0xa00
+                +m_OnStartTouchAll : 0x9b8
                 +m_hTouchingEntities : 0xa48
+                +m_OnTouching : 0xa00
             }
             class C_Beam {
-                +m_fFadeLength : 0xa2c
-                +m_fSpeed : 0xa3c
-                +m_flFrame : 0xa40
+                +m_nClipStyle : 0xa44
+                +m_hAttachEntity : 0x9f0
+                +m_fHaloScale : 0xa30
             }
             class C_Breakable {
             }
             class C_BreakableProp {
-                +m_OnStartDeath : 0xd10
-                +m_explosionModifier : 0xdf0
-                +m_OnBreak : 0xd28
+                +m_explosionCustomEffect : 0xde0
+                +m_BreakableContentsType : 0xda0
+                +m_strBreakableContentsPropGroupOverride : 0xda8
             }
             class C_CProjectile_Rutger_Rocket {
             }
             class C_CitadelBaseAbility {
-                +m_flAltCastHoldStartTime : 0x794
-                +m_eStolenInSlot : 0x748
-                +m_flChargeRechargeStart : 0x784
+                +m_bPredErrorCheckChanneling : 0x7b9
+                +m_bCanBeImbued : 0x79c
+                +m_nUpgradeInfo : 0x758
             }
             class C_CitadelBoomerangProjectile {
                 +m_bReturning : 0xad0
@@ -130,14 +130,14 @@
             class C_CitadelConfigurableTrackedProjectile {
             }
             class C_CitadelDruidInvisBush {
-                +m_vEndPos : 0xcb4
+                +m_vStartPos : 0xca8
                 +m_flStartGrowTime : 0xcc0
                 +m_flEndGrowTime : 0xcc4
             }
             class C_CitadelGameRules {
-                +m_vMinimapMaxs : 0x90
-                +m_bFastCooldownsEnabled : 0x9f
-                +m_bUnlimitedAmmoEnabled : 0xa1
+                +m_hCurrentHeroDrafterCombine : 0xc4
+                +m_flMatchClockAtLastUpdate : 0x9e3c
+                +m_unpausingPlayerId : 0x9e4c
             }
             class C_CitadelGameRulesProxy {
                 +m_pGameRules : 0x5f0
@@ -145,9 +145,9 @@
             class C_CitadelIdolReturnTrigger {
             }
             class C_CitadelItemPickup {
-                +m_iszModelName : 0xcc8
-                +m_nCurrencyValue : 0xcc4
+                +m_flModelScale : 0xcd0
                 +m_hTargetPlayer : 0xcd4
+                +m_nCurrencyValue : 0xcc4
             }
             class C_CitadelMinimapBoundary {
             }
@@ -158,14 +158,14 @@
             }
             C_BasePlayerPawn <|-- C_CitadelPlayerPawn
             class C_CitadelPlayerPawn {
-                +m_vShootTestOffsetStanding : 0x18e8
-                +m_vecFullSellPriceItems : 0x1318
-                +m_vecQuickbuySellQueue : 0x1360
+                +m_nQueuedAbility : 0x1880
+                +m_flSlowSpeed : 0x18c0
+                +m_ItemDraftRoundState : 0x13d0
             }
             class C_CitadelProjectile {
-                +m_sParticleName : 0xa30
+                +m_flArmingTime : 0x9f4
                 +m_vecSpawnPosition : 0xa38
-                +m_flChargeAmount : 0x9f8
+                +m_flProjectileSpeed : 0xa44
             }
             class C_CitadelProjectile_ImmobilizeTrap {
                 +m_bShouldDraw : 0xad0
@@ -175,9 +175,9 @@
             class C_CitadelSpawnBlocker {
             }
             class C_CitadelTeam {
-                +m_bHasValidBaseLocation : 0x6b4
-                +m_nBossesAlive : 0x6b8
                 +m_nBossesMax : 0x6bc
+                +m_nBossesAlive : 0x6b8
+                +m_nBaseGuardianLanesCleared : 0x6c4
             }
             class C_CitadelTeleportTrigger {
                 +m_vExitOrigin : 0xa70
@@ -187,9 +187,9 @@
             class C_CitadelTriggerHideout {
             }
             class C_CitadelViscousBall {
+                +m_hAbility : 0x9a8
                 +m_flBallRadius : 0x9ac
                 +m_bNeedsPhysicsUpdate : 0x9b0
-                +m_hAbility : 0x9a8
             }
             class C_CitadelZiplinePath {
                 +m_bUseBaseLaneColor : 0x704
@@ -199,9 +199,9 @@
                 +m_eLocation : 0x5f0
             }
             class C_Citadel_Bounce_Pad {
-                +m_bDeactivated : 0xcb4
-                +m_vBouncedPlayerBefore : 0xcc8
+                +m_flBarrelBounceVelocity : 0xcb8
                 +m_flBounceVelocity : 0xcac
+                +m_tDeactivationTime : 0xcb0
             }
             class C_Citadel_BreakableDroppedGoldPickup {
             }
@@ -211,14 +211,14 @@
                 +m_nHitIndex : 0xca0
             }
             class C_Citadel_BreakablePropPickup {
-                +m_hVacuumTarget : 0xcd8
+                +m_bActive : 0xca0
                 +m_flLastFrameTime : 0xde8
-                +m_sAmbientNoise : 0xcb8
+                +m_sPickupName : 0xca8
             }
             class C_Citadel_BreakableProp_GraphController {
-                +m_bOnRespawn : 0xe0
                 +m_bSetInit : 0x90
-                +m_bHitTrigger : 0x108
+                +m_flDamageReceived : 0xb8
+                +m_bOnRespawn : 0xe0
             }
             class C_Citadel_BreakblePropGoldPickup {
                 +m_iGoldReward : 0xdf0
@@ -235,36 +235,36 @@
                 +m_bDeploying : 0x90
             }
             class C_Citadel_Destroyable_Building {
+                +m_bDestroyed : 0xef8
                 +m_CCitadelAbilityComponent : 0xca8
                 +m_vecWeakPoints : 0xe90
-                +m_bDestroyed : 0xef8
             }
             class C_Citadel_DruidHealingFruit {
             }
             class C_Citadel_DruidHealingTree {
-                +m_vEndPos : 0xcdc
-                +m_flGrowDuration : 0xce8
+                +m_vStartPos : 0xcd0
                 +m_strFruitModelName : 0xcc8
+                +m_flGrowDuration : 0xce8
             }
             class C_Citadel_DruidPlantShield {
                 +m_vStartPos : 0xcac
-                +m_flStartGrowTime : 0xcc4
                 +m_bSolid : 0xca8
+                +m_flStartGrowTime : 0xcc4
             }
             class C_Citadel_DynamicProp {
-                +m_strEnemySkin : 0xf08
-                +m_nPlayerTeamEvent : 0xef0
                 +m_strDefaultSkin : 0xef8
+                +m_strEnemySkin : 0xf08
+                +m_strFriendlySkin : 0xf00
             }
             class C_Citadel_FissureWall {
-                +m_bSolid : 0xcc0
+                +m_flEndEmitTime : 0xcbc
                 +m_nTouchCount : 0xcc4
-                +m_vEndPos : 0xcac
+                +m_vStartPos : 0xca0
             }
             class C_Citadel_GraveStone_Blocker {
+                +m_iGravestoneState : 0xcac
                 +m_flLifetime : 0xcb0
                 +m_hAbility : 0xca8
-                +m_iGravestoneState : 0xcac
             }
             class C_Citadel_Hideout_Ball {
             }
@@ -274,22 +274,22 @@
                 +m_flTurnSolidTime : 0xca0
             }
             class C_Citadel_Ice_Path_Shard_Physics {
-                +m_qForward : 0x9d8
-                +m_flShardWidth : 0x9ec
                 +m_ShardDesc : 0x9a0
+                +m_qForward : 0x9d8
+                +m_flEndTime : 0x9e8
             }
             class C_Citadel_Magic_Beam_Blocker {
                 +m_flTurnSolidTime : 0xca0
             }
             class C_Citadel_Nano_Predatory_Statue {
-                +m_flLifetime : 0xcc4
                 +m_hAbility : 0xcc0
+                +m_flLifetime : 0xcc4
             }
             class C_Citadel_PestilenceDroneDispenser {
             }
             class C_Citadel_PickupItemSpawner {
-                +m_tNextDropTime : 0xca8
                 +m_bPowerupActive : 0xcac
+                +m_tNextDropTime : 0xca8
             }
             class C_Citadel_Projectile_Archer_ChargedShot {
             }
@@ -306,7 +306,7 @@
             }
             class C_Citadel_Projectile_Viscous_GooGrenade {
                 +m_tNextDetonateTime : 0xad4
-                +m_nBounces : 0xad0
+                +m_vecLastHitTargets : 0xad8
                 +m_vecProjectileHitTargets : 0xaf0
             }
             class C_Citadel_Projectile_Wrecker_Teleport {
@@ -328,19 +328,19 @@
             class C_Citadel_SpiderAnimating {
             }
             class C_ClientRagdoll {
-                +m_gibDespawnTime : 0xca8
-                +m_flScaleTimeEnd : 0xd10
-                +m_bFadeOut : 0xca0
+                +m_bImportant : 0xca1
+                +m_iMinFriction : 0xcb0
+                +m_iMaxFriction : 0xcb4
             }
             class C_ColorCorrection {
-                +m_flMaxWeight : 0x60c
-                +m_MinFalloff : 0x5fc
                 +m_bMaster : 0x815
+                +m_flFadeInDuration : 0x604
+                +m_bFadingIn : 0x820
             }
             class C_ColorCorrectionVolume {
-                +m_LastExitWeight : 0xa78
                 +m_LastEnterWeight : 0xa70
-                +m_LastEnterTime : 0xa74
+                +m_bEnabled : 0xa80
+                +m_Weight : 0xa8c
             }
             class C_CommandContext {
                 +command_number : 0xb0
@@ -349,14 +349,14 @@
             class C_ConditionalCollidable {
             }
             class C_DynamicLight {
+                +m_Radius : 0x9a4
                 +m_Flags : 0x9a0
-                +m_InnerAngle : 0x9ac
-                +m_SpotRadius : 0x9b4
+                +m_Exponent : 0x9a8
             }
             class C_DynamicProp {
                 +m_bIsOverrideProp : 0xea1
-                +m_iInitialGlowState : 0xea4
-                +m_bFiredStartEndOutput : 0xe9e
+                +m_vecCachedRenderMins : 0xebc
+                +m_bUseAnimGraph : 0xe11
             }
             class C_DynamicPropAlias_cable_dynamic {
             }
@@ -365,89 +365,89 @@
             class C_DynamicPropAlias_prop_dynamic_override {
             }
             class C_EconEntity {
-                +m_AttributeManager : 0xe68
-                +m_nDisableMode : 0xfc4
-                +m_bAttachmentDirty : 0xff0
+                +m_hViewmodelAttachment : 0xfe8
+                +m_vecAttachedModels : 0xff8
+                +m_vecAttachedParticles : 0xfd0
             }
             class C_EconEntity__AttachedModelData_t {
                 +m_iModelDisplayFlags : 0x0
             }
             class C_EconEntity__AttachedParticleInfo_t {
+                +m_customType : 0x4
                 +m_nAttachedParticleIndex : 0x0
                 +m_bShouldDestroyImmediately : 0x8
-                +m_customType : 0x4
             }
             class C_EconItemAttribute {
                 +m_iAttributeDefinitionIndex : 0x30
                 +m_flValue : 0x34
             }
             class C_EconItemView {
-                +m_iItemDefinitionIndex : 0x8
                 +m_iAccountID : 0x20
+                +m_bHasAttachedParticles : 0x35
                 +m_bIsStoreItem : 0x32
             }
             class C_EconWearable {
             }
             class C_EntityDissolve {
-                +m_bLinkedToServerEnt : 0x9dd
-                +m_flFadeOutLength : 0x9c0
-                +m_flFadeOutStart : 0x9bc
+                +m_nDissolveType : 0x9c8
+                +m_flFadeOutModelLength : 0x9b8
+                +m_vDissolverOrigin : 0x9cc
             }
             class C_EntityFlame {
                 +m_hEntAttached : 0x5f0
-                +m_hOldAttached : 0x618
                 +m_bCheapEffect : 0x61c
+                +m_hOldAttached : 0x618
             }
             class C_EnvCombinedLightProbeVolume {
-                +m_Entity_bCustomCubemapTexture : 0x1678
-                +m_Entity_nLightProbeAtlasZ : 0x1718
-                +m_Entity_hLightProbeTexture_AmbientCube : 0x1680
+                +m_Entity_vBoxMaxs : 0x16d4
+                +m_Entity_hLightProbeDirectLightShadowsTexture : 0x16c0
+                +m_Entity_nEnvCubeMapArrayIndex : 0x16e8
             }
             class C_EnvCubemap {
-                +m_Entity_vBoxProjectMins : 0x680
-                +m_Entity_bDefaultSpecEnvMap : 0x6be
-                +m_Entity_bMoveable : 0x698
+                +m_Entity_bCustomCubemapTexture : 0x678
+                +m_Entity_nHandshake : 0x69c
+                +m_Entity_hCubemapTexture : 0x670
             }
             class C_EnvCubemapBox {
             }
             class C_EnvCubemapFog {
-                +m_flFogFalloffExponent : 0x5f8
-                +m_iszSkyEntity : 0x628
-                +m_nCubemapSourceType : 0x61c
+                +m_flFogMaxOpacity : 0x618
+                +m_flStartDistance : 0x5f4
+                +m_flEndDistance : 0x5f0
             }
             class C_EnvDecal {
-                +m_flDepthSortBias : 0x9bc
-                +m_nRenderOrder : 0x9b4
-                +m_flHeight : 0x9ac
+                +m_hDecalMaterial : 0x9a0
+                +m_flWidth : 0x9a8
+                +m_flDepth : 0x9b0
             }
             class C_EnvDetailController {
                 +m_flFadeStartDist : 0x5f0
                 +m_flFadeEndDist : 0x5f4
             }
             class C_EnvLightProbeVolume {
-                +m_Entity_hLightProbeTexture_SH2_DC : 0x15f8
-                +m_Entity_nLightProbeAtlasY : 0x1668
-                +m_Entity_bMoveable : 0x1648
+                +m_Entity_bStartDisabled : 0x1654
+                +m_Entity_vBoxMaxs : 0x163c
+                +m_Entity_hLightProbeTexture_SDF : 0x15f0
             }
             class C_EnvParticleGlow {
+                +m_ColorTint : 0xf5c
+                +m_flSelfIllumScale : 0xf58
                 +m_hTextureOverride : 0xf60
-                +m_flAlphaScale : 0xf50
-                +m_flRadiusScale : 0xf54
             }
             class C_EnvSky {
-                +m_vTintColorLightingOnly : 0x9b5
-                +m_flFogMaxStart : 0x9cc
-                +m_flFogMaxEnd : 0x9d0
+                +m_hSkyMaterial : 0x9a0
+                +m_vTintColor : 0x9b1
+                +m_bStartDisabled : 0x9b0
             }
             class C_EnvVolumetricFogController {
-                +m_flAnisotropy : 0x5f8
-                +m_flStartScattering : 0x650
-                +m_bStartDisabled : 0x664
+                +m_flIndirectStrength : 0x60c
+                +m_TintColor : 0x5f4
+                +m_flStartDrawDistanceTime : 0x648
             }
             class C_EnvVolumetricFogVolume {
                 +m_bOverrideSunLightStrength : 0x636
-                +m_bOverrideIndirectLightStrength : 0x635
-                +m_bIndirectUseLPVs : 0x60d
+                +m_bOverrideTintColor : 0x634
+                +m_TintColor : 0x630
             }
             class C_EnvWind {
                 +m_EnvWindShared : 0x5f0
@@ -456,46 +456,46 @@
                 +m_EnvWindShared : 0x5f0
             }
             class C_EnvWindController {
-                +m_nVolumeResolutionZ : 0x700
-                +m_nClipmapLevels : 0x704
-                +m_bFirstTime : 0x709
+                +m_fSpeedVariation : 0x6ec
+                +m_fVolumeHalfExtentZ : 0x6f8
+                +m_nVolumeResolutionXY : 0x6fc
             }
             class C_EnvWindShared {
-                +m_flMaxGustDelay : 0x20
-                +m_windRadius : 0x14
+                +m_flMinGustDelay : 0x1c
+                +m_iMaxWind : 0x12
                 +m_iMinGust : 0x18
             }
             class C_EnvWindVolume {
-                +m_vBoxMaxs : 0x600
-                +m_nShape : 0x610
                 +m_vBoxMins : 0x5f4
+                +m_vBoxMaxs : 0x600
+                +m_fWindDirectionVariationMultiplier : 0x620
             }
             class C_Fish {
-                +m_wiggleTimer : 0xcd8
-                +m_z : 0xd2c
-                +m_angles : 0xcb8
+                +m_vel : 0xcac
+                +m_deathDepth : 0xcc8
+                +m_localLifeState : 0xcc4
             }
             class C_FogController {
                 +m_iChangedVariables : 0x65c
-                +m_bUseAngles : 0x658
                 +m_fog : 0x5f0
+                +m_bUseAngles : 0x658
             }
             class C_FuncBrush {
             }
             class C_FuncElectrifiedVolume {
+                +m_EffectName : 0x9a8
                 +m_nAmbientEffect : 0x9a0
                 +m_bState : 0x9b0
-                +m_EffectName : 0x9a8
             }
             class C_FuncLadder {
                 +m_vecLadderDir : 0x9a0
-                +m_vecPlayerMountPositionTop : 0x9d4
-                +m_Dismounts : 0x9b0
+                +m_bFakeLadder : 0x9f1
+                +m_bHasSlack : 0x9f2
             }
             class C_FuncMonitor {
                 +m_brushModelName : 0x9b0
-                +m_bRenderShadows : 0x9ac
-                +m_bDraw3DSkybox : 0x9bd
+                +m_bEnabled : 0x9bc
+                +m_nResolutionEnum : 0x9a8
             }
             class C_FuncMoveLinear {
             }
@@ -504,14 +504,14 @@
             class C_FuncRotating {
             }
             class C_FuncTrackTrain {
+                +m_flLineLength : 0x9a8
                 +m_nLongAxis : 0x9a0
                 +m_flRadius : 0x9a4
-                +m_flLineLength : 0x9a8
             }
             class C_GameRules {
-                +__m_pChainEntity : 0x8
                 +m_nPauseStartTick : 0x34
-                +m_nTotalPausedTicks : 0x30
+                +m_bGamePaused : 0x38
+                +__m_pChainEntity : 0x8
             }
             class C_GameRulesProxy {
             }
@@ -519,13 +519,13 @@
                 +m_WindClothForceHandle : 0xab0
             }
             class C_GradientFog {
-                +m_flFogMaxOpacity : 0x610
+                +m_bStartDisabled : 0x628
                 +m_flFarZ : 0x60c
-                +m_flFogStartDistance : 0x5f8
+                +m_flFogEndDistance : 0x5fc
             }
             class C_HandleTest {
-                +m_Handle : 0x5f0
                 +m_bSendHandle : 0x5f4
+                +m_Handle : 0x5f0
             }
             class C_HeroPreview {
                 +m_CCitadelHeroComponent : 0x5f0
@@ -538,9 +538,9 @@
             class C_InfoPortalLink {
             }
             class C_InfoVisibilityBox {
+                +m_bEnabled : 0x604
                 +m_nMode : 0x5f4
                 +m_vBoxSize : 0x5f8
-                +m_bEnabled : 0x604
             }
             class C_ItemAmmo {
             }
@@ -569,9 +569,9 @@
             class C_LightSpotEntity {
             }
             class C_LocalTempEntity {
-                +m_vecTempEntAcceleration : 0xd3c
-                +m_vecTempEntVelocity : 0xd24
-                +fadeSpeed : 0xcb4
+                +m_flFrameMax : 0xca8
+                +m_flFrame : 0xcf8
+                +x : 0xcac
             }
             class C_MiniMapMarker {
                 +m_eType : 0x5f0
@@ -581,32 +581,32 @@
             class C_MultiplayRules {
             }
             class C_NPC_BarrackBoss {
-                +m_iLane : 0x1bf4
-                +m_CCitadelPlayerClipComponent : 0x1bc8
                 +m_flFadeOutStart : 0x1bf8
+                +m_flFadeOutEnd : 0x1bfc
+                +m_iLane : 0x1bf4
             }
             class C_NPC_BaseDefenseSentry {
                 +m_vecUnitStatusOffset : 0xcb0
             }
             class C_NPC_Boss_Tier2 {
-                +m_flFadeOutEnd : 0x1bec
-                +m_vecElectricBeamLookTarget : 0x1bf8
-                +m_flFadeOutStart : 0x1be8
+                +m_hTargetedEnemy : 0x1bf4
+                +m_iLane : 0x1be4
+                +m_flLastWeakpointHitTime : 0x1bf0
             }
             class C_NPC_Boss_Tier2_Sidelanes {
             }
             class C_NPC_Boss_Tier3 {
-                +m_iLane : 0x1bc8
-                +m_vecElectricBeamTargetEnd : 0x1bcc
                 +m_ePhase : 0x1bdc
+                +m_eAliveState : 0x1bd8
+                +m_vShrineAttackTargetPos : 0x1be0
             }
             class C_NPC_CarpetBombDrone {
             }
             class C_NPC_Escort {
             }
             class C_NPC_FieldSentry {
-                +m_flAimPitch : 0xcb8
                 +m_flAttackRange : 0xcb4
+                +m_flAimPitch : 0xcb8
             }
             class C_NPC_FlyingDrone {
             }
@@ -617,8 +617,8 @@
             class C_NPC_MortarSentry {
             }
             class C_NPC_NanoRollermine {
-                +m_flForwardSpeed : 0x1bf0
                 +m_hOwnerPawn : 0x1bf4
+                +m_flForwardSpeed : 0x1bf0
             }
             class C_NPC_Neutral_Bug {
             }
@@ -640,13 +640,13 @@
             class C_NPC_PestilenceDrone {
             }
             class C_NPC_ShieldedSentry {
-                +m_flAttackRange : 0xe9c
                 +m_flAimPitch : 0xea0
+                +m_CCitadelAbilityComponent : 0xcb0
                 +m_flLifeTime : 0xea8
             }
             class C_NPC_SimpleAnimatingAI {
-                +m_hEnemy : 0xca0
                 +m_hAbilityOwner : 0xca4
+                +m_hEnemy : 0xca0
             }
             class C_NPC_SurveillanceDrone {
             }
@@ -654,70 +654,70 @@
                 +m_CCitadelAbilityComponent : 0xcb0
             }
             class C_NPC_Trooper {
+                +m_iLane : 0x1bc8
                 +m_hTargetedEnemy : 0x1bcc
                 +m_flHealingChargeParticlePct : 0x1bd0
-                +m_iLane : 0x1bc8
             }
             class C_NPC_TrooperBoss {
                 +m_CCitadelPlayerClipComponent : 0x1bc8
+                +m_flFadeOutStart : 0x1bf8
                 +m_iLane : 0x1bf4
-                +m_flFadeOutEnd : 0x1bfc
             }
             class C_NPC_TrooperNeutral {
-                +m_bPlayingIdle : 0x1bc8
                 +m_bShieldActive : 0x1bc9
+                +m_bPlayingIdle : 0x1bc8
             }
             class C_NPC_TrooperNeutralNodeMover {
             }
             class C_NetTestBaseCombatCharacter {
             }
             class C_OmniLight {
-                +m_flOuterAngle : 0xcb4
                 +m_flInnerAngle : 0xcb0
                 +m_bShowLight : 0xcb8
+                +m_flOuterAngle : 0xcb4
             }
             class C_ParticleSystem {
-                +m_bOldActive : 0xf38
-                +m_vServerControlPoints : 0xbc0
-                +m_bFrozen : 0xba1
+                +m_hControlPointEnts : 0xbf4
+                +m_bNoRamp : 0xcf6
+                +m_nStopType : 0xba8
             }
             class C_PathParticleRope {
+                +m_PathNodes_RadiusScale : 0x6b8
                 +m_PathNodes_Position : 0x640
-                +m_flRadius : 0x628
-                +m_flSlack : 0x624
+                +m_nEffectState : 0x630
             }
             class C_PathParticleRopeAlias_path_particle_rope_clientside {
             }
             class C_PhysBox {
             }
             class C_PhysMagnet {
-                +m_aAttachedObjects : 0xcb8
                 +m_aAttachedObjectsFromServer : 0xca0
+                +m_aAttachedObjects : 0xcb8
             }
             class C_PhysPropClientside {
                 +m_fDeathTime : 0xe14
-                +m_flTouchDelta : 0xe10
-                +m_vecDamagePosition : 0xe18
+                +m_vecDamageDirection : 0xe24
+                +m_nDamageType : 0xe30
             }
             class C_PhysicsProp {
                 +m_bAwake : 0xe10
             }
             C_BasePlayerPawn <|-- C_PlayerSprayDecal
             class C_PlayerSprayDecal {
-                +m_vecNormal : 0x9d0
-                +m_nVersion : 0x9f0
-                +m_vecLeft : 0x9c4
+                +m_sSoundNameDamaged : 0xa08
+                +m_SprayRenderHelper : 0xa20
+                +m_unTraceID : 0x9a8
             }
             C_BasePlayerPawn <|-- C_PlayerVisibility
             class C_PlayerVisibility {
-                +m_bStartDisabled : 0x600
                 +m_flFadeTime : 0x5fc
-                +m_flFogMaxDensityMultiplier : 0x5f8
+                +m_flFogDistanceMultiplier : 0x5f4
+                +m_bIsEnabled : 0x601
             }
             class C_PointCamera {
-                +m_FogColor : 0x5f9
-                +m_flFogStart : 0x600
-                +m_bUseScreenAspectRatio : 0x60d
+                +m_bNoSky : 0x614
+                +m_flFogEnd : 0x604
+                +m_TargetFOV : 0x63c
             }
             class C_PointCameraVFOV {
                 +m_flVerticalFOV : 0x650
@@ -727,72 +727,72 @@
                 +m_hActivator : 0x9d0
             }
             class C_PointClientUIHUD {
-                +m_unHorizontalAlign : 0xb6c
                 +m_unVerticalAlign : 0xb70
-                +m_unOwnerContext : 0xb68
+                +m_unOrientation : 0xb74
+                +m_bAllowInteractionFromAllSceneWorlds : 0xb78
             }
             class C_PointClientUIWorldPanel {
-                +m_bRenderBackface : 0xbe3
-                +m_anchorDeltaTransform : 0x9e0
-                +m_flWidth : 0xb9c
+                +m_bIgnoreInput : 0xb98
+                +m_unOwnerContext : 0xbb0
+                +m_pOffScreenIndicator : 0xb70
             }
             class C_PointClientUIWorldTextPanel {
                 +m_messageText : 0xbf0
             }
             class C_PointCommentaryNode {
-                +m_bWasActive : 0xcb9
-                +m_bActive : 0xcb8
-                +m_bListenedTo : 0xce8
+                +m_sndCommentary : 0xcf0
+                +m_flStartTimeInCommentary : 0xcc4
+                +m_flStartTime : 0xcc0
             }
             class C_PointEntity {
             }
             class C_PointEntityAlias_info_target_portrait_root {
             }
             class C_PointValueRemapper {
-                +m_bFirstUpdate : 0x651
-                +m_flDisengageDistance : 0x604
-                +m_flPreviousUpdateTickTime : 0x658
+                +m_bRequiresUseKey : 0x60c
+                +m_flRatchetOffset : 0x648
+                +m_flPreviousValue : 0x654
             }
             class C_PointWorldText {
                 +m_nReorientMode : 0xc74
-                +m_FontName : 0xbc8
-                +m_nJustifyHorizontal : 0xc6c
+                +m_flBackgroundBorderHeight : 0xc60
+                +m_flDepthOffset : 0xc54
             }
             class C_PortraitWorldCallbackHandler {
             }
             class C_PortraitWorldUnit {
-                +m_cameraName : 0x1080
-                +m_nAmbientParticle : 0x10bc
-                +m_sceneName : 0x10d0
+                +m_bSuppressIntroEffects : 0xee0
+                +m_flStartingAnimationCycle : 0xef0
+                +m_flRareLoadoutAnimChance : 0xef4
             }
             class C_PortraitWorldUnit_GraphController {
-                +m_ShopState : 0xa8
                 +m_BaseState : 0x90
+                +m_ShopState : 0xa8
             }
             class C_PostProcessingVolume {
-                +m_flMinLogExposure : 0xa8c
-                +m_hPostSettings : 0xa80
-                +m_bExposureControl : 0xaad
+                +m_flExposureFadeSpeedDown : 0xaa4
+                +m_flMaxLogExposure : 0xa90
+                +m_flExposureCompensation : 0xa9c
             }
             class C_Precipitation {
                 +m_bParticlePrecipInitialized : 0xab9
-                +m_bHasSimulatedSinceLastSceneObjectUpdate : 0xaba
                 +m_tParticlePrecipTraceTimer : 0xab0
+                +m_flParticleInnerDist : 0xa80
             }
             class C_PrecipitationBlocker {
             }
             class C_Projectile_Airheart_FloatingBomb {
             }
             class C_Projectile_Airheart_Package {
-                +m_flStunDuration : 0xca8
-                +m_pAbility : 0xca0
                 +m_flStunRadius : 0xcac
+                +m_pAbility : 0xca0
+                +m_flStunDuration : 0xca8
             }
             class C_Projectile_Doorman_Cart_Projectile {
             }
             class C_Projectile_GraveStone_Projectile {
-                +m_tDieTime : 0xad4
                 +m_flWidth : 0xad0
+                +m_tDieTime : 0xad4
             }
             class C_Projectile_KnightCharge_Projectile {
             }
@@ -813,35 +813,35 @@
             class C_PropDoorRotating {
             }
             class C_RagdollProp {
-                +m_ragEnabled : 0xca8
-                +m_ragPos : 0xcc0
-                +m_ragAngles : 0xcd8
+                +m_iEyeAttachment : 0xcf8
+                +m_worldSpaceBoneComputationOrder : 0xd18
+                +m_parentPhysicsBoneIndices : 0xd00
             }
             class C_RagdollPropAttached {
+                +m_boneIndexAttached : 0xd30
+                +m_attachmentPointRagdollSpace : 0xd44
                 +m_vecOffset : 0xd50
-                +m_attachmentPointBoneSpace : 0xd38
-                +m_bHasParent : 0xd60
             }
             class C_RectLight {
                 +m_bShowLight : 0xcb0
             }
             class C_RenderPortal {
-                +m_flFadeStartAngle : 0x9b8
-                +m_hRemotePortalLink : 0x9a4
+                +m_hLocalPortalLink : 0x9a0
                 +m_flFadeStartDist : 0x9b0
+                +m_brushModelName : 0x9a8
             }
             class C_RopeKeyframe {
-                +m_iForcePointMoveCounter : 0x9b8
-                +m_flTimeToNextGust : 0xcbc
-                +m_vCachedEndPointAttachmentPos : 0xcd8
+                +m_bPhysicsInitted : 0x0
+                +m_vCachedEndPointAttachmentAngle : 0xcf0
+                +m_Subdiv : 0xc6e
             }
             class C_RopeKeyframe__CPhysicsDelegate {
                 +m_pKeyframe : 0x8
             }
             class C_SceneEntity {
-                +m_QueuedEvents : 0x638
-                +m_bClientOnly : 0x606
                 +m_bIsPlayingBack : 0x5f8
+                +m_hActorList : 0x610
+                +m_QueuedEvents : 0x638
             }
             class C_SceneEntity__QueuedEvents_t {
                 +starttime : 0x0
@@ -852,41 +852,41 @@
             class C_SingleplayRules {
             }
             class C_SkyCamera {
+                +m_skyboxData : 0x5f0
                 +m_skyboxSlotToken : 0x680
-                +m_pNext : 0x688
                 +m_bUseAngles : 0x684
             }
             class C_SoundAreaEntityBase {
-                +m_vPos : 0x608
                 +m_bDisabled : 0x5f0
+                +m_iszSoundAreaType : 0x600
                 +m_bWasEnabled : 0x5f8
             }
             class C_SoundAreaEntityOrientedBox {
-                +m_vMax : 0x624
                 +m_vMin : 0x618
+                +m_vMax : 0x624
             }
             class C_SoundAreaEntitySphere {
                 +m_flRadius : 0x618
             }
             class C_SoundEventAABBEntity {
-                +m_vMaxs : 0x6bc
                 +m_vMins : 0x6b0
+                +m_vMaxs : 0x6bc
             }
             class C_SoundEventConeEntity {
                 +m_flEmitterAngle : 0x6b0
+                +m_flAttenMin : 0x6b8
                 +m_flAttenMax : 0x6bc
-                +m_iszParameterName : 0x6c0
             }
             class C_SoundEventEntity {
-                +m_onSoundFinished : 0x640
-                +m_bClientSideOnly : 0x0
-                +m_iszSoundName : 0x688
+                +m_iszAttachmentName : 0x608
+                +m_nEntityIndexSelection : 0x6a8
+                +m_bStopOnNew : 0x5f2
             }
             class C_SoundEventEntityAlias_snd_event_point {
             }
             class C_SoundEventOBBEntity {
-                +m_vMins : 0x6b0
                 +m_vMaxs : 0x6bc
+                +m_vMins : 0x6b0
             }
             class C_SoundEventPathCornerEntity {
                 +m_vecCornerPairsNetworked : 0x6b0
@@ -905,44 +905,44 @@
             class C_SoundOpvarSetPathCornerEntity {
             }
             class C_SoundOpvarSetPointBase {
-                +m_iszStackName : 0x5f0
-                +m_iszOperatorName : 0x5f8
+                +m_bFastRefresh : 0x60d
+                +m_bUseAutoCompare : 0x60c
                 +m_iszOpvarName : 0x600
             }
             class C_SoundOpvarSetPointEntity {
             }
             class C_SpotlightEnd {
-                +m_flLightScale : 0x9a0
                 +m_Radius : 0x9a4
+                +m_flLightScale : 0x9a0
             }
             class C_Sprite {
-                +m_flFrame : 0x9b4
-                +m_flBrightnessTimeStart : 0xa00
+                +m_flScaleDuration : 0x9d4
                 +m_nSpriteHeight : 0xa14
+                +m_flSpriteScale : 0x9d0
             }
             class C_Team {
-                +m_aPlayers : 0x608
-                +m_iScore : 0x620
                 +m_szTeamname : 0x624
+                +m_iScore : 0x620
+                +m_aPlayerControllers : 0x5f0
             }
             class C_TeamRelativeParticleSystem {
-                +m_iFriendlyEffectIndex : 0xf78
+                +m_iszEnemyEffectName : 0xf70
                 +m_iEnemyEffectIndex : 0xf80
-                +m_iszFriendlyEffectName : 0xf68
+                +m_iFriendlyEffectIndex : 0xf78
             }
             class C_TeamplayRules {
             }
             class C_TextureBasedAnimatable {
-                +m_flFPS : 0x9a4
-                +m_flStartTime : 0x9d0
-                +m_hPositionKeys : 0x9a8
+                +m_bLoop : 0x9a0
+                +m_vAnimationBoundsMax : 0x9c4
+                +m_hRotationKeys : 0x9b0
             }
             class C_TintController {
             }
             class C_TonemapController2 {
-                +m_flExposureAdaptationSpeedUp : 0x5f8
-                +m_flTonemapEVSmoothingRange : 0x600
                 +m_flAutoExposureMax : 0x5f4
+                +m_flAutoExposureMin : 0x5f0
+                +m_flExposureAdaptationSpeedUp : 0x5f8
             }
             class C_TonemapController2Alias_env_tonemap_controller2 {
             }
@@ -959,9 +959,9 @@
             class C_TriggerNeutralShield {
             }
             class C_TriggerPhysics {
-                +m_linearForce : 0xa84
-                +m_bConvertToDebrisWhenPossible : 0xab8
+                +m_vecLinearForceDirection : 0xaac
                 +m_gravityScale : 0xa70
+                +m_linearLimit : 0xa74
             }
             class C_TriggerTier3Phase2Shield {
                 +m_nNumEnemyPlayers : 0xa70
@@ -973,9 +973,9 @@
             class C_World {
             }
             class C_fogplayerparams_t {
-                +m_flNewFarZ : 0x3c
-                +m_hCtrl : 0x8
-                +m_flOldHDRColorScale : 0x20
+                +m_flOldFarZ : 0x24
+                +m_flNewStart : 0x2c
+                +m_flNewHDRColorScale : 0x38
             }
 
         </div>

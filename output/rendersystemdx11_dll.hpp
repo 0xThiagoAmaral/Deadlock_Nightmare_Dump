@@ -14,8 +14,8 @@ namespace deadlock_dumper {
     }
     namespace RsBlendStateDesc_t {
       constexpr std::ptrdiff_t m_bIndependentBlendEnable = 0x0;
-      constexpr std::ptrdiff_t m_bAlphaToCoverageEnable = 0x0;
       constexpr std::ptrdiff_t m_blendOpBits = 0x0;
+      constexpr std::ptrdiff_t m_bAlphaToCoverageEnable = 0x0;
       constexpr std::ptrdiff_t m_srcBlendBits = 0x0;
       constexpr std::ptrdiff_t m_destBlendBits = 0x4;
       constexpr std::ptrdiff_t m_srcBlendAlphaBits = 0x8;
@@ -41,15 +41,15 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_flSlopeScaledDepthBias = 0xc;
     }
     namespace RsStencilStateDesc_t {
-      constexpr std::ptrdiff_t m_frontStencilFailOp = 0x0;
-      constexpr std::ptrdiff_t m_frontStencilDepthFailOp = 0x0;
-      constexpr std::ptrdiff_t m_frontStencilFunc = 0x0;
-      constexpr std::ptrdiff_t m_bStencilEnable = 0x0;
       constexpr std::ptrdiff_t m_backStencilPassOp = 0x0;
-      constexpr std::ptrdiff_t m_backStencilDepthFailOp = 0x0;
-      constexpr std::ptrdiff_t m_backStencilFunc = 0x0;
       constexpr std::ptrdiff_t m_backStencilFailOp = 0x0;
+      constexpr std::ptrdiff_t m_bStencilEnable = 0x0;
       constexpr std::ptrdiff_t m_frontStencilPassOp = 0x0;
+      constexpr std::ptrdiff_t m_backStencilDepthFailOp = 0x0;
+      constexpr std::ptrdiff_t m_frontStencilFailOp = 0x0;
+      constexpr std::ptrdiff_t m_frontStencilFunc = 0x0;
+      constexpr std::ptrdiff_t m_frontStencilDepthFailOp = 0x0;
+      constexpr std::ptrdiff_t m_backStencilFunc = 0x0;
       constexpr std::ptrdiff_t m_nStencilReadMask = 0x4;
       constexpr std::ptrdiff_t m_nStencilWriteMask = 0x5;
     }
