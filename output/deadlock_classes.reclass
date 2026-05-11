@@ -10371,10 +10371,10 @@
       <node type="Hex32" name="m_flOrbClaimWindow" comment="" offset="2720" />
     </class>
     <class name="CClientAlphaProperty" comment="Module: client.dll" uuid="e7f46773842b5463-e7f46773842b5463">
-      <node type="Hex32" name="m_nRenderMode" comment="" offset="0" />
-      <node type="Hex32" name="m_nRenderFX" comment="" offset="0" />
-      <node type="Hex32" name="m_nDesyncOffset" comment="" offset="0" />
       <node type="Hex32" name="m_bAlphaOverride" comment="" offset="0" />
+      <node type="Hex32" name="m_nDesyncOffset" comment="" offset="0" />
+      <node type="Hex32" name="m_nRenderFX" comment="" offset="0" />
+      <node type="Hex32" name="m_nRenderMode" comment="" offset="0" />
       <node type="Hex32" name="m_bShadowAlphaOverride" comment="" offset="0" />
       <node type="Hex32" name="m_nDistFadeStart" comment="" offset="16" />
       <node type="Hex32" name="m_nDistFadeEnd" comment="" offset="18" />
@@ -10593,15 +10593,15 @@
       <node type="Hex32" name="m_flTopSpeedScale" comment="" offset="192" />
     </class>
     <class name="CGameSceneNode" comment="Module: client.dll" uuid="b1f6d82114c4a954-b1f6d82114c4a954">
+      <node type="Hex32" name="m_bBoneMergeFlex" comment="" offset="0" />
+      <node type="Hex32" name="m_nLatchAbsOrigin" comment="" offset="0" />
       <node type="Hex32" name="m_bWillBeCallingPostDataUpdate" comment="" offset="0" />
+      <node type="Hex32" name="m_bNetworkedScaleChanged" comment="" offset="0" />
+      <node type="Hex32" name="m_bNetworkedAnglesChanged" comment="" offset="0" />
+      <node type="Hex32" name="m_bDirtyBoneMergeBoneToRoot" comment="" offset="0" />
       <node type="Hex32" name="m_bDirtyBoneMergeInfo" comment="" offset="0" />
       <node type="Hex32" name="m_bNetworkedPositionChanged" comment="" offset="0" />
-      <node type="Hex32" name="m_bBoneMergeFlex" comment="" offset="0" />
-      <node type="Hex32" name="m_bNetworkedScaleChanged" comment="" offset="0" />
-      <node type="Hex32" name="m_bDirtyBoneMergeBoneToRoot" comment="" offset="0" />
       <node type="Hex32" name="m_bDirtyHierarchy" comment="" offset="0" />
-      <node type="Hex32" name="m_bNetworkedAnglesChanged" comment="" offset="0" />
-      <node type="Hex32" name="m_nLatchAbsOrigin" comment="" offset="0" />
       <node type="Hex32" name="m_nodeToWorld" comment="" offset="16" />
       <node type="Hex32" name="m_pOwner" comment="" offset="48" />
       <node type="Hex32" name="m_pParent" comment="" offset="56" />
@@ -14473,8 +14473,8 @@
       <node type="Hex32" name="m_fadeToColor" comment="" offset="2500" />
     </class>
     <class name="C_RopeKeyframe" comment="Module: client.dll" uuid="4dc812bb07159b45-4dc812bb07159b45">
-      <node type="Hex32" name="m_bPhysicsInitted" comment="" offset="0" />
       <node type="Hex32" name="m_bEndPointAttachmentPositionsDirty" comment="" offset="0" />
+      <node type="Hex32" name="m_bPhysicsInitted" comment="" offset="0" />
       <node type="Hex32" name="m_bNewDataThisFrame" comment="" offset="0" />
       <node type="Hex32" name="m_bEndPointAttachmentAnglesDirty" comment="" offset="0" />
       <node type="Hex32" name="m_LinksTouchingSomething" comment="" offset="2472" />

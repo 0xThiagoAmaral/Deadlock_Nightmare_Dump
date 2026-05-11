@@ -4,10 +4,15 @@
 
 namespace deadlock_dumper {
   namespace pulse_system_dll {
+    namespace AABB_t {
+      constexpr std::ptrdiff_t m_vMinBounds = 0x0;
+      constexpr std::ptrdiff_t m_vMaxBounds = 0xc;
+    }
     namespace CBasePulseGraphInstance {
     }
-    namespace CPhysSurfaceProperties* {
-      constexpr std::ptrdiff_t  = 0x0;
+    namespace CEntityIndex {
+    }
+    namespace CGlobalSymbol {
     }
     namespace CPulseArraylib {
     }
@@ -326,37 +331,39 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_nCursorValueA = 0xd0;
       constexpr std::ptrdiff_t m_nCursorValueB = 0xd4;
     }
-    namespace CUtlVector< CPhysSurfaceProperties* > {
+    namespace CUtlBinaryBlock {
     }
-    namespace CUtlVector< CPulseCell_Timeline__TimelineEvent_t > {
+    namespace CUtlLeanVector< AABB_t > {
     }
-    namespace CUtlVector< PhysShapeMarkup_t > {
+    namespace CUtlLeanVector< CGlobalSymbol > {
     }
-    namespace CUtlVector< PulseRuntimeBlackboardReferenceIndex_t > {
+    namespace CUtlVector< CEntityIndex > {
     }
-    namespace CUtlVector< PulseRuntimeVarIndex_t > {
+    namespace CUtlVector< CGlobalSymbol > {
     }
-    namespace CUtlVector< RnCapsuleDesc_t > {
+    namespace CUtlVector< CUtlBinaryBlock > {
     }
-    namespace CUtlVector< RnHullDesc_t > {
+    namespace CUtlVector< RenderInputLayoutField_t > {
     }
-    namespace CUtlVector< RnMeshDesc_t > {
+    namespace CUtlVector< VectorAligned > {
     }
-    namespace CUtlVector< RnSoftbodyCapsule_t > {
+    namespace CUtlVector< VsInputSignatureElement_t > {
     }
-    namespace CUtlVector< RnSoftbodyParticle_t > {
+    namespace CUtlVector< int8 > {
     }
-    namespace CUtlVector< RnSoftbodySpring_t > {
+    namespace CUtlVector< std__pair< CUtlString, uint32 > > {
     }
-    namespace CUtlVector< RnSphereDesc_t > {
+    namespace CUtlVectorFixedGrowable< CGlobalSymbol, 7 > {
     }
-    namespace CUtlVector< VPhysXBodyPart_t > {
+    namespace CUtlVectorFixedGrowable< Vector2D, 10 > {
     }
-    namespace CUtlVector< VPhysXCollisionAttributes_t > {
+    namespace CUtlVectorFixedGrowable< int16, 5 > {
     }
-    namespace CUtlVector< VPhysXConstraint2_t > {
+    namespace CUtlVectorFixedGrowable< int16, 7 > {
     }
-    namespace CUtlVector< VPhysXJoint_t > {
+    namespace CUtlVectorFixedGrowable< uint8, 10 > {
+    }
+    namespace CUtlVectorFixedGrowable< uint8, 30 > {
     }
     namespace FakeEntityDerivedA_tAPI {
     }
@@ -370,11 +377,6 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_RequirementNodeIDs = 0x50;
       constexpr std::ptrdiff_t m_nCursorStateBlockIndex = 0x68;
     }
-    namespace PhysShapeMarkup_t {
-      constexpr std::ptrdiff_t m_nBodyInAggregate = 0x0;
-      constexpr std::ptrdiff_t m_nShapeInBody = 0x4;
-      constexpr std::ptrdiff_t m_sHitGroup = 0x8;
-    }
     namespace PulseNodeDynamicOutflows_t {
       constexpr std::ptrdiff_t m_Outflows = 0x0;
     }
@@ -387,107 +389,30 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_DependentObservableVars = 0x48;
       constexpr std::ptrdiff_t m_DependentObservableBlackboardReferences = 0x60;
     }
-    namespace PulseRuntimeBlackboardReferenceIndex_t {
-      constexpr std::ptrdiff_t m_Value = 0x0;
-    }
-    namespace PulseRuntimeVarIndex_t {
-      constexpr std::ptrdiff_t m_Value = 0x0;
-    }
     namespace PulseSelectorOutflowList_t {
       constexpr std::ptrdiff_t m_Outflows = 0x0;
-    }
-    namespace RnCapsuleDesc_t {
-      constexpr std::ptrdiff_t m_Capsule = 0x18;
-    }
-    namespace RnHullDesc_t {
-      constexpr std::ptrdiff_t m_Hull = 0x18;
-    }
-    namespace RnMeshDesc_t {
-      constexpr std::ptrdiff_t m_Mesh = 0x18;
-    }
-    namespace RnSoftbodyCapsule_t {
-      constexpr std::ptrdiff_t m_vCenter = 0x0;
-      constexpr std::ptrdiff_t m_flRadius = 0x18;
-      constexpr std::ptrdiff_t m_nParticle = 0x1c;
-    }
-    namespace RnSoftbodyParticle_t {
-      constexpr std::ptrdiff_t m_flMassInv = 0x0;
-    }
-    namespace RnSoftbodySpring_t {
-      constexpr std::ptrdiff_t m_nParticle = 0x0;
-      constexpr std::ptrdiff_t m_flLength = 0x4;
-    }
-    namespace RnSphereDesc_t {
-      constexpr std::ptrdiff_t m_Sphere = 0x18;
     }
     namespace SignatureOutflow_Continue {
     }
     namespace SignatureOutflow_Resume {
     }
-    namespace VPhysXBodyPart_t {
-      constexpr std::ptrdiff_t m_nFlags = 0x0;
-      constexpr std::ptrdiff_t m_flMass = 0x4;
-      constexpr std::ptrdiff_t m_rnShape = 0x8;
-      constexpr std::ptrdiff_t m_nCollisionAttributeIndex = 0x80;
-      constexpr std::ptrdiff_t m_nReserved = 0x82;
-      constexpr std::ptrdiff_t m_flInertiaScale = 0x84;
-      constexpr std::ptrdiff_t m_flLinearDamping = 0x88;
-      constexpr std::ptrdiff_t m_flAngularDamping = 0x8c;
-      constexpr std::ptrdiff_t m_flLinearDrag = 0x90;
-      constexpr std::ptrdiff_t m_flAngularDrag = 0x94;
-      constexpr std::ptrdiff_t m_bOverrideMassCenter = 0x98;
-      constexpr std::ptrdiff_t m_vMassCenterOverride = 0x9c;
+    namespace Vector2D {
     }
-    namespace VPhysXCollisionAttributes_t {
-      constexpr std::ptrdiff_t m_nIncludeDetailLayerCount = 0x0;
-      constexpr std::ptrdiff_t m_CollisionGroup = 0x4;
-      constexpr std::ptrdiff_t m_InteractAs = 0x8;
-      constexpr std::ptrdiff_t m_InteractWith = 0x20;
-      constexpr std::ptrdiff_t m_InteractExclude = 0x38;
-      constexpr std::ptrdiff_t m_DetailLayers = 0x50;
-      constexpr std::ptrdiff_t m_CollisionGroupString = 0x68;
-      constexpr std::ptrdiff_t m_InteractAsStrings = 0x70;
-      constexpr std::ptrdiff_t m_InteractWithStrings = 0x88;
-      constexpr std::ptrdiff_t m_InteractExcludeStrings = 0xa0;
-      constexpr std::ptrdiff_t m_DetailLayerStrings = 0xb8;
+    namespace VectorAligned {
     }
-    namespace VPhysXConstraint2_t {
-      constexpr std::ptrdiff_t m_nFlags = 0x0;
-      constexpr std::ptrdiff_t m_nParent = 0x4;
-      constexpr std::ptrdiff_t m_nChild = 0x6;
-      constexpr std::ptrdiff_t m_params = 0x8;
+    namespace VsInputSignatureElement_t {
+      constexpr std::ptrdiff_t m_pName = 0x0;
+      constexpr std::ptrdiff_t m_pSemantic = 0x40;
+      constexpr std::ptrdiff_t m_pD3DSemanticName = 0x80;
+      constexpr std::ptrdiff_t m_nD3DSemanticIndex = 0xc0;
     }
-    namespace VPhysXJoint_t {
-      constexpr std::ptrdiff_t m_nType = 0x0;
-      constexpr std::ptrdiff_t m_nBody1 = 0x2;
-      constexpr std::ptrdiff_t m_nBody2 = 0x4;
-      constexpr std::ptrdiff_t m_nFlags = 0x6;
-      constexpr std::ptrdiff_t m_Frame1 = 0x10;
-      constexpr std::ptrdiff_t m_Frame2 = 0x30;
-      constexpr std::ptrdiff_t m_bEnableCollision = 0x50;
-      constexpr std::ptrdiff_t m_bIsLinearConstraintDisabled = 0x51;
-      constexpr std::ptrdiff_t m_bIsAngularConstraintDisabled = 0x52;
-      constexpr std::ptrdiff_t m_bEnableLinearLimit = 0x53;
-      constexpr std::ptrdiff_t m_LinearLimit = 0x54;
-      constexpr std::ptrdiff_t m_bEnableLinearMotor = 0x5c;
-      constexpr std::ptrdiff_t m_vLinearTargetVelocity = 0x60;
-      constexpr std::ptrdiff_t m_flMaxForce = 0x6c;
-      constexpr std::ptrdiff_t m_bEnableSwingLimit = 0x70;
-      constexpr std::ptrdiff_t m_SwingLimit = 0x74;
-      constexpr std::ptrdiff_t m_bEnableTwistLimit = 0x7c;
-      constexpr std::ptrdiff_t m_TwistLimit = 0x80;
-      constexpr std::ptrdiff_t m_bEnableAngularMotor = 0x88;
-      constexpr std::ptrdiff_t m_vAngularTargetVelocity = 0x8c;
-      constexpr std::ptrdiff_t m_flMaxTorque = 0x98;
-      constexpr std::ptrdiff_t m_flLinearFrequency = 0x9c;
-      constexpr std::ptrdiff_t m_flLinearDampingRatio = 0xa0;
-      constexpr std::ptrdiff_t m_flAngularFrequency = 0xa4;
-      constexpr std::ptrdiff_t m_flAngularDampingRatio = 0xa8;
-      constexpr std::ptrdiff_t m_flFriction = 0xac;
-      constexpr std::ptrdiff_t m_flElasticity = 0xb0;
-      constexpr std::ptrdiff_t m_flElasticDamping = 0xb4;
-      constexpr std::ptrdiff_t m_flPlasticity = 0xb8;
-      constexpr std::ptrdiff_t m_Tag = 0xc0;
+    namespace int16 {
+    }
+    namespace int8 {
+    }
+    namespace std__pair< CUtlString, uint32 > {
+    }
+    namespace uint8 {
     }
   }
 }

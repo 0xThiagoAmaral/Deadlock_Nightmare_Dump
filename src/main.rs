@@ -1,13 +1,16 @@
 mod mem;
 mod sdk;
 mod exporters;
+mod live_bridge;
 
 use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
+use std::sync::Arc;
 use mem::Process;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     println!("=== DEADLOCK ORACLE DUMPER (Industrial Edition) ===");
     
     let proc = match Process::open("deadlock") {
@@ -84,4 +87,8 @@ fn main() {
     
     println!("\n[+] SUCESSO! O Oraculo terminou o dump.");
     println!("[+] Localizado em: deadlock_dumper_rust/output/");
+
+    // 6. Iniciar Live Bridge (Nightmare Studio)
+    let proc_arc = Arc::new(proc);
+    live_bridge::start_live_bridge(proc_arc, client_base).await;
 }

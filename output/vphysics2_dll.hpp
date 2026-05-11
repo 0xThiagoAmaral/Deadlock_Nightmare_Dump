@@ -4,17 +4,7 @@
 
 namespace deadlock_dumper {
   namespace vphysics2_dll {
-    namespace AnimNodeNetworkMode {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace AnimParamNetworkSetting {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace AnimParamType_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace AnimValueSource {
-      constexpr std::ptrdiff_t  = 0x0;
+    namespace  {
     }
     namespace CFeIndexedJiggleBone {
       constexpr std::ptrdiff_t m_nNode = 0x0;
@@ -76,21 +66,6 @@ namespace deadlock_dumper {
     namespace CFeVertexMapBuildArray {
       constexpr std::ptrdiff_t m_Array = 0x0;
     }
-    namespace CNmFloatMathNode__Operator_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace CNmRootMotionData__SamplingMode_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace CNmStateNode__TimedEvent_t__Comparison_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace CNmSyncEventIndexConditionNode__TriggerMode_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace CNmTimeConditionNode__Operator_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
     namespace CRegionSVM {
       constexpr std::ptrdiff_t m_Planes = 0x0;
       constexpr std::ptrdiff_t m_Nodes = 0x18;
@@ -123,9 +98,6 @@ namespace deadlock_dumper {
     }
     namespace Dop26_t {
       constexpr std::ptrdiff_t m_flSupport = 0x0;
-    }
-    namespace EPulseGraphExecutionHistoryFlag {
-      constexpr std::ptrdiff_t  = 0x0;
     }
     namespace FeAnimStrayRadius_t {
       constexpr std::ptrdiff_t nNode = 0x0;
@@ -492,9 +464,6 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t nListBegin = 0x8;
       constexpr std::ptrdiff_t nListEnd = 0xa;
     }
-    namespace FlexOpCode_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
     namespace FourCovMatrices3 {
       constexpr std::ptrdiff_t m_vDiag = 0x0;
       constexpr std::ptrdiff_t m_flXY = 0x30;
@@ -504,9 +473,6 @@ namespace deadlock_dumper {
     namespace FourVectors2D {
       constexpr std::ptrdiff_t x = 0x0;
       constexpr std::ptrdiff_t y = 0x10;
-    }
-    namespace IKTargetSource {
-      constexpr std::ptrdiff_t  = 0x0;
     }
     namespace IPhysAggregateInstance {
       constexpr std::ptrdiff_t m_pSkeleton = 0x8;
@@ -526,27 +492,6 @@ namespace deadlock_dumper {
     }
     namespace IPhysicsRagdollControl {
     }
-    namespace MeshDrawPrimitiveFlags_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace ModelBoneFlexComponent_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace MorphFlexControllerRemapType_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace NmCachedValueMode_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace NmEasingFunction_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace NmEventConditionRules_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace NmIKBlendMode_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
     namespace OldFeEdge_t {
       constexpr std::ptrdiff_t m_flK = 0x0;
       constexpr std::ptrdiff_t invA = 0xc;
@@ -561,23 +506,8 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t flAxialModelWeights = 0x30;
       constexpr std::ptrdiff_t m_nNode = 0x40;
     }
-    namespace PFNoiseType_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace ParticleFloatRoundType_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace ParticleModelType_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace PermModelInfo_t__FlagEnum {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
     namespace PhysicsParticleId_t {
       constexpr std::ptrdiff_t m_Value = 0x0;
-    }
-    namespace PoseType_t {
-      constexpr std::ptrdiff_t  = 0x0;
     }
     namespace RnBlendVertex_t {
       constexpr std::ptrdiff_t m_nWeight0 = 0x0;
@@ -695,15 +625,6 @@ namespace deadlock_dumper {
     }
     namespace RnWing_t {
       constexpr std::ptrdiff_t m_nIndex = 0x0;
-    }
-    namespace StepPhase {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace TargetWarpAngleMode_t {
-      constexpr std::ptrdiff_t  = 0x0;
-    }
-    namespace VPhysXBodyPart_t__VPhysXFlagEnum_t {
-      constexpr std::ptrdiff_t  = 0x0;
     }
     namespace VertexPositionColor_t {
       constexpr std::ptrdiff_t m_vPosition = 0x0;
