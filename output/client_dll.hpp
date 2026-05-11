@@ -10374,11 +10374,11 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_flOrbClaimWindow = 0xaa0;
     }
     namespace CClientAlphaProperty {
+      constexpr std::ptrdiff_t m_nRenderFX = 0x0;
+      constexpr std::ptrdiff_t m_bAlphaOverride = 0x0;
+      constexpr std::ptrdiff_t m_nRenderMode = 0x0;
       constexpr std::ptrdiff_t m_nDesyncOffset = 0x0;
       constexpr std::ptrdiff_t m_bShadowAlphaOverride = 0x0;
-      constexpr std::ptrdiff_t m_bAlphaOverride = 0x0;
-      constexpr std::ptrdiff_t m_nRenderFX = 0x0;
-      constexpr std::ptrdiff_t m_nRenderMode = 0x0;
       constexpr std::ptrdiff_t m_nDistFadeStart = 0x10;
       constexpr std::ptrdiff_t m_nDistFadeEnd = 0x12;
       constexpr std::ptrdiff_t m_nAlpha = 0x17;
@@ -10596,15 +10596,15 @@ namespace deadlock_dumper {
       constexpr std::ptrdiff_t m_flTopSpeedScale = 0xc0;
     }
     namespace CGameSceneNode {
-      constexpr std::ptrdiff_t m_bDirtyHierarchy = 0x0;
-      constexpr std::ptrdiff_t m_bDirtyBoneMergeBoneToRoot = 0x0;
-      constexpr std::ptrdiff_t m_bDirtyBoneMergeInfo = 0x0;
       constexpr std::ptrdiff_t m_bNetworkedAnglesChanged = 0x0;
-      constexpr std::ptrdiff_t m_bWillBeCallingPostDataUpdate = 0x0;
       constexpr std::ptrdiff_t m_bNetworkedPositionChanged = 0x0;
-      constexpr std::ptrdiff_t m_nLatchAbsOrigin = 0x0;
       constexpr std::ptrdiff_t m_bBoneMergeFlex = 0x0;
       constexpr std::ptrdiff_t m_bNetworkedScaleChanged = 0x0;
+      constexpr std::ptrdiff_t m_bDirtyBoneMergeInfo = 0x0;
+      constexpr std::ptrdiff_t m_nLatchAbsOrigin = 0x0;
+      constexpr std::ptrdiff_t m_bDirtyBoneMergeBoneToRoot = 0x0;
+      constexpr std::ptrdiff_t m_bDirtyHierarchy = 0x0;
+      constexpr std::ptrdiff_t m_bWillBeCallingPostDataUpdate = 0x0;
       constexpr std::ptrdiff_t m_nodeToWorld = 0x10;
       constexpr std::ptrdiff_t m_pOwner = 0x30;
       constexpr std::ptrdiff_t m_pParent = 0x38;
@@ -12545,8 +12545,8 @@ namespace deadlock_dumper {
     namespace CServerOnlyModelEntity {
     }
     namespace CSkeletonInstance {
-      constexpr std::ptrdiff_t m_bIsGeneratingLatchedParentSpaceState = 0x0;
       constexpr std::ptrdiff_t m_bDirtyMotionType = 0x0;
+      constexpr std::ptrdiff_t m_bIsGeneratingLatchedParentSpaceState = 0x0;
       constexpr std::ptrdiff_t m_modelState = 0x150;
       constexpr std::ptrdiff_t m_bUseParentRenderBounds = 0x3b0;
       constexpr std::ptrdiff_t m_bDisableSolidCollisionsForHierarchy = 0x3b1;
@@ -14477,9 +14477,9 @@ namespace deadlock_dumper {
     }
     namespace C_RopeKeyframe {
       constexpr std::ptrdiff_t m_bEndPointAttachmentPositionsDirty = 0x0;
+      constexpr std::ptrdiff_t m_bPhysicsInitted = 0x0;
       constexpr std::ptrdiff_t m_bEndPointAttachmentAnglesDirty = 0x0;
       constexpr std::ptrdiff_t m_bNewDataThisFrame = 0x0;
-      constexpr std::ptrdiff_t m_bPhysicsInitted = 0x0;
       constexpr std::ptrdiff_t m_LinksTouchingSomething = 0x9a8;
       constexpr std::ptrdiff_t m_nLinksTouchingSomething = 0x9ac;
       constexpr std::ptrdiff_t m_bApplyWind = 0x9b0;

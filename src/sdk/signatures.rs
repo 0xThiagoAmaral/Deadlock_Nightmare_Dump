@@ -3,81 +3,55 @@ use crate::mem::Process;
 
 pub struct Signature {
     pub name: String,
-    pub pattern: Vec<u8>,
-    pub mask: String,
-    pub offset: usize, // Offset da instrucao
-    pub rip_offset: usize, // Offset do operando RIP-relativo
-    pub rip_size: usize,   // Tamanho total da instrucao para calculo RIP
+    pub patterns: Vec<(&'static [u8], &'static str, usize, usize)>, // pattern, mask, rip_offset, rip_size
 }
 
 pub fn scan_signatures(proc: &Process, client_base: usize, client_size: usize) -> HashMap<String, String> {
     let mut results = HashMap::new();
     
-    // Padroes conhecidos para Deadlock (Source 2)
     let signatures = vec![
         Signature {
             name: "EntityList".to_string(),
-            pattern: vec![0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x7C, 0x24, 0x00, 0x8B, 0xFA, 0xC1, 0xEB],
-            mask: "xxx????xxxx?xxxx".to_string(),
-            offset: 0,
-            rip_offset: 3,
-            rip_size: 7,
+            patterns: vec![
+                (&[0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x7C, 0x24, 0x00, 0x8B, 0xFA, 0xC1, 0xEB], "xxx????xxxx?xxxx", 3, 7),
+                (&[0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x4C, 0x8B, 0xC1], "xxx????xxx", 3, 7),
+            ],
         },
         Signature {
             name: "LocalPlayerController".to_string(),
-            pattern: vec![0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x85, 0xC0, 0x74, 0x4F],
-            mask: "xxx????xxxxx".to_string(),
-            offset: 0,
-            rip_offset: 3,
-            rip_size: 7,
+            patterns: vec![
+                (&[0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x85, 0xC0, 0x74, 0x4F], "xxx????xxxxx", 3, 7),
+            ],
         },
         Signature {
             name: "ViewMatrix".to_string(),
-            pattern: vec![0x48, 0x8D, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0xC1, 0xE0, 0x06],
-            mask: "xxx????xxxx".to_string(),
-            offset: 0,
-            rip_offset: 3,
-            rip_size: 7,
+            patterns: vec![
+                (&[0x48, 0x8D, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0xC1, 0xE0, 0x06], "xxx????xxxx", 3, 7),
+            ],
         },
         Signature {
             name: "GlobalVars".to_string(),
-            pattern: vec![0x44, 0x8B, 0x81, 0x24, 0x0B, 0x00, 0x00, 0x45, 0x85, 0xC0, 0x78, 0x00, 0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x44, 0x3B, 0x40, 0x44],
-            mask: "xxxxxxxxxxx?xxx????xxxx".to_string(),
-            offset: 0,
-            rip_offset: 15,
-            rip_size: 19,
-        },
-        Signature {
-            name: "ViewRender".to_string(),
-            pattern: vec![0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x01, 0x48, 0xFF, 0x60, 0x38],
-            mask: "xxx????xxxxxxx".to_string(),
-            offset: 0,
-            rip_offset: 3,
-            rip_size: 7,
+            patterns: vec![
+                (&[0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8B, 0xD1, 0x48, 0x8B, 0x0D], "xxx????xxxxxx", 3, 7),
+            ],
         },
         Signature {
             name: "GameEntitySystem".to_string(),
-            pattern: vec![0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0x85, 0xC9, 0x74, 0x0F],
-            mask: "xxx????xxxx?".to_string(),
-            offset: 0,
-            rip_offset: 3,
-            rip_size: 7,
+            patterns: vec![
+                (&[0x48, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x48, 0x85, 0xC9, 0x74, 0x0F], "xxx????xxxx?", 3, 7),
+            ],
         },
         Signature {
             name: "ForceAttack".to_string(),
-            pattern: vec![0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8D, 0x15, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x44, 0x24],
-            mask: "xxx????xxx????xxxx".to_string(),
-            offset: 0,
-            rip_offset: 3,
-            rip_size: 7,
+            patterns: vec![
+                (&[0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8D, 0x15, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x44, 0x24], "xxx????xxx????xxxx", 3, 7),
+            ],
         },
         Signature {
             name: "ForceJump".to_string(),
-            pattern: vec![0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8D, 0x15, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x44, 0x24],
-            mask: "xxx????xxx????xxxx".to_string(),
-            offset: 28, // Offset dependente do binario, mas vamos usar um pattern mais especifico se possivel
-            rip_offset: 3,
-            rip_size: 7,
+            patterns: vec![
+                (&[0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8D, 0x15, 0x00, 0x00, 0x00, 0x00, 0x48, 0x89, 0x44, 0x24], "xxx????xxx????xxxx", 3, 7),
+            ],
         },
     ];
 
@@ -88,11 +62,19 @@ pub fn scan_signatures(proc: &Process, client_base: usize, client_size: usize) -
     }
 
     for sig in signatures {
-        if let Some(addr) = find_pattern(&data, &sig.pattern, &sig.mask) {
-            let inst_addr = client_base + addr + sig.offset;
-            let rel_off: i32 = proc.read(inst_addr + sig.rip_offset);
-            let abs_addr = inst_addr + sig.rip_size + rel_off as usize;
-            results.insert(sig.name, format!("{:#x}", abs_addr - client_base));
+        for (p, mask, rip_off, rip_size) in sig.patterns {
+            if let Some(addr) = find_pattern(&data, p, mask) {
+                let inst_addr = client_base + addr;
+                let rel_off: i32 = proc.read(inst_addr + rip_off);
+                let abs_addr = inst_addr + rip_size + rel_off as usize;
+                
+                // Validation: Ensure the pointer is not zero
+                let ptr: usize = proc.read(abs_addr);
+                if ptr != 0 {
+                    results.insert(sig.name, format!("{:#x}", abs_addr - client_base));
+                    break;
+                }
+            }
         }
     }
 

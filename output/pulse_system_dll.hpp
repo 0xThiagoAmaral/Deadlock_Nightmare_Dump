@@ -7,6 +7,7 @@ namespace deadlock_dumper {
     namespace CBasePulseGraphInstance {
     }
     namespace CPhysSurfaceProperties* {
+      constexpr std::ptrdiff_t  = 0x0;
     }
     namespace CPulseArraylib {
     }

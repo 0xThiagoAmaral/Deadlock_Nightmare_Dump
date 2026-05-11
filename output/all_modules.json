@@ -1,19 +1,31 @@
 {
   "auto_sigs": {
-    "C_BaseEntity::m_iHealth": "CB 66 0F 6E B0 ?? ?? ?? ?? 0F 5B F6 F3 0F 59",
-    "C_BaseEntity::m_iMaxHealth": "CC CC CC 8B 81 ?? ?? ?? ?? C3 CC CC CC CC CC",
-    "C_BaseEntity::m_iTeamNum": "8B 08 0F B6 99 ?? ?? ?? ?? BA FF FF FF FF 48",
-    "C_BasePlayerPawn::m_vOldOrigin": "10 00 00 89 B7 ?? ?? ?? ?? 48 89 B7 B0 10 00",
-    "C_BasePlayerPawn::m_vecLastCameraSetupLocalOrigin": "00 00 00 C6 87 ?? ?? ?? ?? 01 48 8B CB 48 89"
+    "C_BaseEntity::m_iHealth": "0x354",
+    "C_BaseEntity::m_iMaxHealth": "0x350",
+    "C_BaseEntity::m_iTeamNum": "0x3f3",
+    "C_BasePlayerPawn::m_vOldOrigin": "0x1090",
+    "C_BasePlayerPawn::m_vecLastCameraSetupLocalOrigin": "0x1078"
   },
   "interfaces": {
     "client.dll": {
-      "CBaseModifier": 18446603347214663680
+      "Source2Client002": 59742304,
+      "�^�\\�": 58070592
     },
-    "engine2.dll": {},
-    "inputsystem.dll": {},
+    "engine2.dll": {
+      "Source2Client002": 6902464,
+      "�^�\\�": 18446744072132826688
+    },
+    "inputsystem.dll": {
+      "Source2Client002": 267600,
+      "�^�\\�": 18446744071498044992
+    },
+    "schemasystem.dll": {
+      "Source2Client002": 464928,
+      "�^�\\�": 18446744071569086016
+    },
     "server.dll": {
-      "CBaseModifier": 18446603347151552512
+      "Source2Client002": 63139312,
+      "�^�\\�": 18446744073694090816
     }
   },
   "network_messages": {
@@ -22335,7 +22347,9 @@
     "pulse_system.dll": {
       "classes": {
         "CBasePulseGraphInstance": {},
-        "CPhysSurfaceProperties*": {},
+        "CPhysSurfaceProperties*": {
+          "": 0
+        },
         "CPulseArraylib": {},
         "CPulseCell_Base": {
           "m_nEditorNodeID": 8
@@ -45784,6 +45798,7 @@
   },
   "signatures": {
     "EntityList": "0x31b3138",
+    "GameEntitySystem": "0x389fe30",
     "LocalPlayerController": "0x37665e0",
     "ViewMatrix": "0x376bd40"
   },

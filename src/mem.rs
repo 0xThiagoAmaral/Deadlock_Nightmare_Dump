@@ -73,4 +73,33 @@ impl Process {
         let end = buffer.iter().position(|&b| b == 0).unwrap_or(max_len);
         String::from_utf8_lossy(&buffer[..end]).to_string()
     }
+
+    pub fn get_export(&self, module_base: usize, export_name: &str) -> Option<usize> {
+        let dos_header: [u8; 64] = self.read(module_base);
+        if dos_header[0] != b'M' || dos_header[1] != b'Z' { return None; }
+        
+        let nt_header_off = u32::from_le_bytes(dos_header[0x3C..0x40].try_into().unwrap()) as usize;
+        let export_dir_rva: u32 = self.read(module_base + nt_header_off + 0x88);
+        let export_dir_size: u32 = self.read(module_base + nt_header_off + 0x8C);
+        
+        if export_dir_rva == 0 { return None; }
+        
+        let export_dir_addr = module_base + export_dir_rva as usize;
+        let num_names: u32 = self.read(export_dir_addr + 0x18);
+        let names_rva: u32 = self.read(export_dir_addr + 0x20);
+        let funcs_rva: u32 = self.read(export_dir_addr + 0x1C);
+        let ords_rva: u32 = self.read(export_dir_addr + 0x24);
+        
+        for i in 0..num_names {
+            let name_rva: u32 = self.read(module_base + names_rva as usize + (i * 4) as usize);
+            let name = self.read_string(module_base + name_rva as usize, 64);
+            
+            if name == export_name {
+                let ord: u16 = self.read(module_base + ords_rva as usize + (i * 2) as usize);
+                let func_rva: u32 = self.read(module_base + funcs_rva as usize + (ord as usize * 4));
+                return Some(module_base + func_rva as usize);
+            }
+        }
+        None
+    }
 }

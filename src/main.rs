@@ -38,9 +38,7 @@ fn main() {
             if class_name.contains("BaseEntity") || class_name.contains("PlayerPawn") {
                 for (f_name, off) in fields {
                     if f_name.contains("Health") || f_name.contains("Team") || f_name.contains("Origin") {
-                        if let Some(sig) = sdk::xref::generate_xref_signature(&proc, client_base, client_size, *off) {
-                            auto_sigs.insert(format!("{}::{}", class_name, f_name), sig);
-                        }
+                        auto_sigs.insert(format!("{}::{}", class_name, f_name), format!("{:#x}", off));
                     }
                 }
             }
